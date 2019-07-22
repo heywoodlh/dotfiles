@@ -26,7 +26,7 @@ git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
 
 git module fish-pure-prompt:
-    url: https://github.com/brandonweiss/pure.fish
+    url: https://github.com/heywoodlh/pure.fish
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
