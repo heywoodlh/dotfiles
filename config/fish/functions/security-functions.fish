@@ -6,6 +6,14 @@ function assetfinder
   docker run --rm -i heywoodlh/tomnomnom-tools:latest assetfinder $argv
 end
 
+function bettercap
+  docker run -it --privileged --net=host bettercap/bettercap $argv
+end
+
+function blackwidow
+    docker run -it blackwidow $argv
+end
+
 function commix
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full commix $argv
 end
@@ -34,6 +42,27 @@ function dnswalk
   docker run -it --rm booyaabes/kali-linux-full dnswalk $argv
 end
 
+function fsociety
+  set working_dir (pwd)
+  git clone https://github.com/Manisso/fsociety ~/.fsociety
+  cd ~/.fsociety
+  docker-compose build
+  docker-compose up -d
+  docker-compose exec fsociety fsociety
+  cd "$working_dir"
+end
+
+function fsociety-poweroff
+  set working_dir (pwd)
+  cd ~/.fsociety
+  docker-compose down
+  cd "$working_dir"
+end
+
+function geoiplookup
+    curl ipinfo.io/"$argv[1]"
+end
+
 function gf
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | gf $argv"
 end
@@ -46,12 +75,20 @@ function hping3
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full hping3 $argv
 end
 
+function httping
+  docker run --rm bretfisher/httping $argv
+end
+
 function httprobe
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | httprobe $argv"
 end
 
 function hydra
   docker run --rm --net host -v (pwd):/data --privileged booyaabes/kali-linux-full hydra $argv
+end
+
+function openvas
+  docker run -d -p 443:443 -p 9390:9390 --name openvas mikesplain/openvas
 end
 
 function masscan
@@ -120,6 +157,10 @@ function searchsploit
   docker run --rm booyaabes/kali-linux-full searchsploit $argv
 end
 
+function sniper
+  docker run --rm -ti menzo/sn1per-docker sniper $argv
+end
+
 function sqlmap
   docker run -it --rm --net host -w /data -v ~/.sqlmap:/root/.sqlmap -v (pwd):/data booyaabes/kali-linux-full sqlmap $argv
 end
@@ -152,6 +193,10 @@ function volatility
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full volatility $argv
 end
 
+function vulnscan
+  docker run --rm --net host --privileged booyaabes/kali-linux-full nmap -sV --script=vulscan/vulscan.nse $argv
+end
+
 function wash
   docker run -it --rm -w /data -v (pwd):/data --net host --privileged booyaabes/kali-linux-full wash $argv
 end
@@ -162,6 +207,10 @@ end
 
 function webscarab
   docker run -it --rm -w /data -v (pwd):/data -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority --net host booyaabes/kali-linux-full java -jar /usr/bin/webscarab $argv
+end
+
+function whatismyip
+  curl 'https://api.ipify.org?format=text'
 end
 
 function wpscan
