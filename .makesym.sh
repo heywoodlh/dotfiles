@@ -21,7 +21,7 @@ ln -s $dir/config ~/.config
 # Move any existing dotfiles to dotfiles_old directory, and create symlinks
 # from the homedir to any files in the ~/dotfiles
 for file in $files; do
-    if [[ -f ~/.file ]]
+    if [[ -f ~/.$file ]]
     then
         mv ~/.$file $olddir
     fi

@@ -2,6 +2,10 @@ function amap
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full amap $argv
 end
 
+function assetfinder
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest assetfinder $argv
+end
+
 function commix
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full commix $argv
 end
@@ -30,8 +34,20 @@ function dnswalk
   docker run -it --rm booyaabes/kali-linux-full dnswalk $argv
 end
 
+function gf
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | gf $argv"
+end
+
+function gron
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "gron $argv"
+end
+
 function hping3
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full hping3 $argv
+end
+
+function httprobe
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | httprobe $argv"
 end
 
 function hydra
@@ -40,6 +56,28 @@ end
 
 function masscan
   docker run --rm --net host -v (pwd):/data --privileged booyaabes/kali-linux-full masscan $argv
+end
+
+function meg
+  if test -z $argv[1]; or test -z $argv[2]
+    echo 'meg [path|pathsFile] [hostsFile] [outputDir]'
+  else
+    set pathsFile $argv[1]
+    set hostsFile $argv[2]
+    if test -z $argv[3]
+      set outDir 'out'
+      if test ! -f $outDir
+        mkdir -p $outDir
+      end
+    else
+      set outDir $argv[3]
+    end
+    if test -f $pathsFile
+      docker run -v $pathsFile:/tmp/paths -v $hostsFile:/tmp/hosts -v $outDir:/tmp/outDir --rm -i heywoodlh/tomnomnom-tools:latest meg /tmp/paths /tmp/hosts /tmp/outDir $argv[4..20]
+    else
+      docker run -v $hostsFile:/tmp/hosts -v $outDir:/tmp/outDir --rm -i heywoodlh/tomnomnom-tools:latest meg $pathsFile /tmp/hosts /tmp/outDir $argv[4..20]
+    end
+  end
 end
 
 function msfconsole
@@ -102,6 +140,10 @@ function tshark
   docker run --rm -w /data -v (pwd):/data --net host --privileged booyaabes/kali-linux-full tshark $argv
 end
 
+function unfurl
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | unfurl $argv"
+end
+
 function volafox
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full volafox $argv
 end
@@ -112,6 +154,10 @@ end
 
 function wash
   docker run -it --rm -w /data -v (pwd):/data --net host --privileged booyaabes/kali-linux-full wash $argv
+end
+
+function waybackurls
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | waybackurls $argv"
 end
 
 function webscarab
