@@ -67,6 +67,15 @@ function gf
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | gf $argv"
 end
 
+function gobuster
+  set secListDir ~/git/seclists
+  if test ! -d $secListDir
+    mkdir -p $secListDir
+    git clone https://github.com/danielmiessler/SecLists $secListDir
+  end
+  docker run --rm -i -w /data -v $secListDir:/data nateysmith/bugbountytools:latest bash -c "gobuster $argv"
+end
+
 function gron
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "gron $argv"
 end
@@ -85,6 +94,10 @@ end
 
 function hydra
   docker run --rm --net host -v (pwd):/data --privileged booyaabes/kali-linux-full hydra $argv
+end
+
+function inception
+  docker run  --rm -i -w /data -v (pwd):/data nateysmith/bugbountytools:latest bash -c "inception $argv"
 end
 
 function openvas
