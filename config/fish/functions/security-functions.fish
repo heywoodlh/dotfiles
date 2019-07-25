@@ -122,7 +122,7 @@ function masscan
 end
 
 function medusa
-  docker run -i --rm booyaabes/kali-linux-full medusa --help
+  docker run -i --rm booyaabes/kali-linux-full medusa
   docker run -it --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full /bin/bash
 end
 
