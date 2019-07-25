@@ -81,7 +81,8 @@ function gron
 end
 
 function gscript
-  docker run -it -v (pwd):/root/share gen0cide/gscript:v1 $argv
+  mkdir -p ~/Documents/gscript
+  docker run -it -v /tmp:/tmp -v ~/Documents/gscript:/root/share gen0cide/gscript:v1 $argv
 end
 
 function hping3
