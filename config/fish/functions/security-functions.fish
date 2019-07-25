@@ -121,6 +121,11 @@ function masscan
   docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged heywoodlh/telnet masscan $argv
 end
 
+function medusa
+  docker run -i --rm booyaabes/kali-linux-full medusa --help
+  docker run -it --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full /bin/bash
+end
+
 function meg
   if test -z $argv[1]; or test -z $argv[2]
     echo 'meg [path|pathsFile] [hostsFile] [outputDir]'
