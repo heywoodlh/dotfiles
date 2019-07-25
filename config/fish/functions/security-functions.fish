@@ -80,6 +80,10 @@ function gron
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "gron $argv"
 end
 
+function gscript
+  docker run -it -v (pwd):/root/share gen0cide/gscript:v1 $argv
+end
+
 function hping3
   docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full hping3 $argv
 end
