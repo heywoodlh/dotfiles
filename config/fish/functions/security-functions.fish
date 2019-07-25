@@ -1,6 +1,10 @@
 function amap
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full amap $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full amap $argv
 end
+
+function arpspoof
+  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full arpspoof -i eth0 
+end 
 
 function assetfinder
   docker run --rm -i heywoodlh/tomnomnom-tools:latest assetfinder $argv
@@ -15,27 +19,27 @@ function blackwidow
 end
 
 function commix
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full commix $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full commix $argv
 end
 
 function dirb
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full dirb $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full dirb $argv
 end
 
 function dnschef
-  docker run -it --rm -w /data -v (pwd):/data --net host booyaabes/kali-linux-full dnschef
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp --net host booyaabes/kali-linux-full dnschef
 end
 
 function dnsenum
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full dnsenum $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full dnsenum $argv
 end
 
 function dnsmap
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full dnsmap $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full dnsmap $argv
 end
 
 function dnsrecon
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full dnsrecon $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full dnsrecon $argv
 end
 
 function dnswalk
@@ -86,7 +90,7 @@ function gscript
 end
 
 function hping3
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full hping3 $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full hping3 $argv
 end
 
 function httping
@@ -98,19 +102,23 @@ function httprobe
 end
 
 function hydra
-  docker run --rm --net host -v (pwd):/data --privileged booyaabes/kali-linux-full hydra $argv
+  docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged booyaabes/kali-linux-full hydra $argv
 end
 
 function inception
-  docker run  --rm -i -w /data -v (pwd):/data nateysmith/bugbountytools:latest bash -c "inception $argv"
+  docker run  --rm -i -w /data -v (pwd):/data -v /tmp:/tmp nateysmith/bugbountytools:latest bash -c "inception $argv"
 end
 
 function openvas
   docker run -d -p 443:443 -p 9390:9390 --name openvas mikesplain/openvas
 end
 
+function kali
+  docker run -it --rm --net host --privileged -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority booyaabes/kali-linux-full /bin/bash $argv
+end
+
 function masscan
-  docker run --rm --net host -v (pwd):/data --privileged booyaabes/kali-linux-full masscan $argv
+  docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged heywoodlh/telnet masscan $argv
 end
 
 function meg
@@ -140,19 +148,27 @@ function msfconsole
 end
 
 function msfvenom
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full msfvenom $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full msfvenom $argv
+end
+
+function nc
+  docker run --rm -i --net host heywoodlh/telnet nc $argv
 end
 
 function ndiff
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full ndiff $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full ndiff $argv
+end
+
+function netcat
+  docker run --rm -i --net host heywoodlh/telnet nc $argv
 end
 
 function netdiscover
-  docker run -it --rm --net host -w /data -v (pwd):/data booyaabes/kali-linux-full netdiscover $argv
+  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full netdiscover $argv
 end
 
 function nikto
-  docker run -it --rm --net host -w /data -v (pwd):/data booyaabes/kali-linux-full nikto $argv
+  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full nikto $argv
 end
 
 function nmap
@@ -164,7 +180,7 @@ function padbuster
 end
 
 function reaver
-  docker run -it --rm --net host --privileged -w /data -v (pwd):/data booyaabes/kali-linux-full reaver $argv
+  docker run -it --rm --net host --privileged -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full reaver $argv
 end
 
 function responder
@@ -180,23 +196,23 @@ function sniper
 end
 
 function sqlmap
-  docker run -it --rm --net host -w /data -v ~/.sqlmap:/root/.sqlmap -v (pwd):/data booyaabes/kali-linux-full sqlmap $argv
+  docker run -it --rm --net host -w /data -v ~/.sqlmap:/root/.sqlmap -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full sqlmap $argv
 end
 
 function socat
-  docker run --rm -w /data -v (pwd):/data --net host booyaabes/kali-linux-full socat $argv
+  docker run --rm -w /data -v (pwd):/data -v /tmp:/tmp --net host booyaabes/kali-linux-full socat $argv
 end
 
 function telnet
-  docker run --rm mikesplain/telnet $argv
+  docker run --rm -i heywoodlh/telnet telnet $argv
 end
 
 function theharvester
-  docker run --rm -v (pwd):/data booyaabes/kali-linux-full theharvester $argv
+  docker run --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full theharvester $argv
 end
 
 function tshark
-  docker run --rm -w /data -v (pwd):/data --net host --privileged booyaabes/kali-linux-full tshark $argv
+  docker run --rm -w /data -v (pwd):/data -v /tmp:/tmp --net host --privileged booyaabes/kali-linux-full tshark $argv
 end
 
 function unfurl
@@ -204,11 +220,11 @@ function unfurl
 end
 
 function volafox
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full volafox $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volafox $argv
 end
 
 function volatility
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full volatility $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volatility $argv
 end
 
 function vulnscan
@@ -216,7 +232,7 @@ function vulnscan
 end
 
 function wash
-  docker run -it --rm -w /data -v (pwd):/data --net host --privileged booyaabes/kali-linux-full wash $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp --net host --privileged booyaabes/kali-linux-full wash $argv
 end
 
 function waybackurls
@@ -224,7 +240,7 @@ function waybackurls
 end
 
 function webscarab
-  docker run -it --rm -w /data -v (pwd):/data -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority --net host booyaabes/kali-linux-full java -jar /usr/bin/webscarab $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority --net host booyaabes/kali-linux-full java -jar /usr/bin/webscarab $argv
 end
 
 function whatismyip
@@ -232,11 +248,11 @@ function whatismyip
 end
 
 function wpscan
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full wpscan $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full wpscan $argv
 end
 
 function yersinia
-  docker run -it --rm -w /data -v (pwd):/data booyaabes/kali-linux-full yersinia $argv
+  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full yersinia $argv
 end
 
 function zaproxy
