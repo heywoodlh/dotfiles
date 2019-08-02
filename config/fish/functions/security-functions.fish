@@ -224,6 +224,10 @@ function unfurl
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | unfurl $argv"
 end
 
+function urlscan
+  docker run --rm -i -v ~/.urlscan:/root/urlscan heywoodlh:urlscan-py $argv
+end
+
 function volafox
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volafox $argv
 end
