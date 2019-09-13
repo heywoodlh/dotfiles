@@ -167,11 +167,13 @@ exec --no-startup-id xss-lock -- i3lock-fancy
 #exec --no-startup-id nm-applet
 
 exec --no-startup-id feh --bg-fill ~/Pictures/active-background.jpg
+exec --no-startup-id ~/.i3/touchpad-on_off.sh*
 
 exec ssh-agent /usr/bin/fish
 
 new_window pixel 
 
 for_window [class="^.*"] border pixel 0
-gaps inner 10
-gaps outer 5
+gaps inner 5
+gaps outer 1
+

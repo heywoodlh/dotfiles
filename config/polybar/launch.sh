@@ -7,6 +7,6 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar example -c $HOME/.config/polybar/config
+polybar top -c $HOME/.config/polybar/config
 
 echo "Bars launched..."
