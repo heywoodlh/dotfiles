@@ -25,5 +25,7 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.config/fish/functions/security-functions.fish
 
 
+source ~/.nix/shell/nix.fish
+
 set -gx PATH /usr/local/go/bin $PATH
 export GOPATH=$HOME/go
