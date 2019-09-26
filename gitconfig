@@ -1,5 +1,5 @@
 [user]
-    email = l.spencer.heywood@gmail.com
+    email = l.spencer.heywood@protonmail.com
     name = Spencer Heywood
 [alias]
     lu = !git for-each-ref --sort='-authordate:iso8601' --format='%(color:bold red)%(objectname:short)%(color:reset) - %(color:reset)%(color:yellow) (%(refname:short)) %(color:reset)%(color:white)%(subject)%(color:reset) %(color:bold green)(%(authordate:relative))%(color:reset)%(color:dim white) %(color:bold blue)<%(authorname)>' refs/heads refs/remotes
