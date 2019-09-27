@@ -18,17 +18,30 @@ end
 
 export GOPATH=$HOME/go
 
-set fish_user_paths       \
-  $HOME/.nix-profile/bin  
-
-if test -d /usr/local/go/bin
-  set -gx PATH /usr/local/go/bin $PATH
+if test -d ~/.nix-profile/bin
+  if not echo "$PATH" | grep -q '~/.nix-profile/bin'
+    set -gx PATH ~/.nix-profile/bin $PATH 
+  end
 end
 
-if test -d ~/go
-  set -gx PATH ~/go/bin $PATH
+if test -d /usr/local/go/bin
+  if not echo "$PATH" | grep -q '/usr/local/go/bin'
+    set -gx PATH /usr/local/go/bin $PATH
+  end
+end
+
+if test -d ~/go/bin
+  if not echo "$PATH" | grep -q '~/go/bin'
+    set -gx PATH ~/go/bin $PATH
+  end
 end
 
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.config/fish/functions/security-functions.fish
+
+set -x NIX_PATH "$HOME/.nix-defexpr/channels"
+set -x NIXPKGS_CONFIG "$HOME/.nix/config.nix"
+set -x NIXOS_CONFIG "$HOME/.nix/os/config.nix"
+set -x NIX_LINK "$HOME/.nix-profile"
+set -x NIX_USER_PROFILE_DIR "/nix/var/nix/profiles/per-user/$USER"
