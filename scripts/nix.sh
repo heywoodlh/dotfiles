@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+NIX_PATH="$HOME/.nix-defexpr/channels"
+NIXPKGS_CONFIG="$HOME/.nix/config.nix"
+NIXOS_CONFIG="$HOME/.nix/os/config.nix"
+NIX_LINK="$HOME/.nix-profile"
+NIX_USER_PROFILE_DIR="/nix/var/nix/profiles/per-user/$USER"
+
 sh <(curl https://nixos.org/nix/install) --daemon
 
 ~/.nix-profile/bin/nix-channel --add https://nixos.org/channels/nixpkgs-unstable
