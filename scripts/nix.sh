@@ -45,6 +45,7 @@ then
 	cd darwin/
 	brew bundle
 	cd ..
+	~/.nix/shell/mac-link-apps.sh
 fi
 
 echo "$HOME/.nix-profile/bin/fish" | sudo tee -a /etc/shells

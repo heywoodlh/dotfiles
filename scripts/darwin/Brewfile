@@ -2,6 +2,7 @@ brew "mas"
 brew "md5sha1sum", link: false
 cask "blockblock"
 cask "do-not-disturb"
+cask "docker"
 cask "firefox"
 cask "gpg-suite"
 cask "knockknock"
