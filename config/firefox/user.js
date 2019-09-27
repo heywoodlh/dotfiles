@@ -1185,7 +1185,7 @@ user_pref("dom.event.clipboardevents.enabled", false);
 /* 2403: disable clipboard commands (cut/copy) from "non-privileged" content [FF41+]
  * this disables document.execCommand("cut"/"copy") to protect your clipboard
  * [1] https://bugzilla.mozilla.org/1170911 ***/
-user_pref("dom.allow_cut_copy", false); // [HIDDEN PREF]
+user_pref("dom.allow_cut_copy", true); // [HIDDEN PREF]
 /* 2404: disable "Confirm you want to leave" dialog on page close
  * Does not prevent JS leaks of the page close event.
  * [1] https://developer.mozilla.org/docs/Web/Events/beforeunload
@@ -1650,7 +1650,7 @@ user_pref("privacy.resistFingerprinting.block_mozAddonManager", true); // [HIDDE
  * [NOTE] This does NOT require RFP (see 4501) **for now**
  * [WARNING] The dimension pref is only meant for testing, and we recommend you DO NOT USE it
  * [1] https://bugzilla.mozilla.org/1407366 ***/
-user_pref("privacy.resistFingerprinting.letterboxing", true); // [HIDDEN PREF]
+user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
    // user_pref("privacy.resistFingerprinting.letterboxing.dimensions", ""); // [HIDDEN PREF]
 /* 4510: disable showing about:blank as soon as possible during startup [FF60+]
  * When default true (FF62+) this no longer masks the RFP chrome resizing activity

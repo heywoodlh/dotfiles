@@ -9,13 +9,6 @@ sudo cp ~/.dotfiles/scripts/bin/* /usr/bin/
 echo "Installing trizen"
 ./install-trizen
 
-#Core dependencies
-#sudo pacman -S xss-lock alacritty i3-gaps feh
-
-#AUR dependencies
-#pacaur -S albert fundle-git fish ttf-dejavu vim firefox xorg-server xorg-xinit python-pip compton xterm network-manager-applet polybar pulseaudio keychain gnome-keyring i3lock-fancy-git 
-
-
 if command -v trizen 
 then
 	echo "Installing updates"

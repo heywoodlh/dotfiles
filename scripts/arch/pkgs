@@ -1,12 +1,6 @@
 python-pip
-wireguard-tools
 wireguard-arch
 fundle-git
-fish
-ttf-dejavu
-vim
-keychain
-jq
 arch-wiki-docs
-bitwarden-cli
 snapd
+cronie
