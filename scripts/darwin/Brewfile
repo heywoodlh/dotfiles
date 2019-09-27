@@ -1,4 +1,5 @@
 brew "mas"
+brew "choose-gui"
 brew "md5sha1sum", link: false
 cask "blockblock"
 cask "do-not-disturb"
