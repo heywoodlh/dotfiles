@@ -21,7 +21,10 @@ then
 	cd linux
 	./firefox-config.sh
 	cd ..
-	update-desktop-database ~/.nix-profile/share/applications
+	if not grep -iq 'XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' ~/.profile
+	then
+		echo 'XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> ~/.profile
+	fi
 fi
 
 if uname -a | grep -iq 'darwin'
