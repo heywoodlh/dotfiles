@@ -21,9 +21,9 @@ then
 	cd linux
 	./firefox-config.sh
 	cd ..
-	if not grep -iq 'XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' ~/.profile
+	if not grep -iq 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' ~/.profile
 	then
-		echo 'XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> ~/.profile
+		echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> ~/.profile
 	fi
 fi
 
