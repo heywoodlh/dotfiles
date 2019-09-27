@@ -20,6 +20,8 @@ then
 	echo "Running Firefox setup script"
 	cd linux
 	./firefox-config.sh
+	cd ..
+	update-desktop-database ~/.nix-profile/share/applications
 fi
 
 if uname -a | grep -iq 'darwin'
@@ -55,6 +57,5 @@ fi
 
 "$HOME"/.nix-profile/bin/bw list items --search 'bw-onboarding-script' --session "$(cat ~/.bw_session)" | "$HOME"/.nix-profile/bin/jq -r '.[].notes' > /tmp/bw-setup.sh
 chmod +x /tmp/bw-setup.sh
-
 
 /tmp/bw-setup.sh
