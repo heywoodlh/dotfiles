@@ -4,6 +4,7 @@ brew "md5sha1sum", link: false
 cask "blockblock"
 cask "do-not-disturb"
 cask "docker"
+cask "eloston-chromium"
 cask "firefox"
 cask "gpg-suite"
 cask "knockknock"
