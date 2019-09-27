@@ -6,7 +6,7 @@ NIXOS_CONFIG="$HOME/.nix/os/config.nix"
 NIX_LINK="$HOME/.nix-profile"
 NIX_USER_PROFILE_DIR="/nix/var/nix/profiles/per-user/$USER"
 
-sh <(curl https://nixos.org/nix/install) --daemon
+sh <(curl https://nixos.org/nix/install) --no-daemon
 
 ~/.nix-profile/bin/nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 ~/.nix-profile/bin/nix-channel --update
