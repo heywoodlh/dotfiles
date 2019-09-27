@@ -12,14 +12,19 @@ done<nix-pkgs
 
 if uname -a | grep -iq 'linux'
 then
+	echo "Installing Nix Packages in linux/nix-pkgs"
 	while read PKG
 	do
 		~/.nix-profile/bin/nix-env --install "$PKG"
 	done<linux/nix-pkgs
+	echo "Running Firefox setup script"
+	cd linux
+	./firefox-config.sh
 fi
 
 if uname -a | grep -iq 'darwin'
 then
+	echo "Installing Nix Packages in darwin/nix-pkgs"
 	while read PKG
 	do
 		~/.nix-profile/bin/nix-env --install "$PKG"

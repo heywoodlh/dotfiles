@@ -22,7 +22,10 @@ else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
 
 else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
+end
 
+if uname -a | grep -iq 'darwin'
+  ~/.nix/shell/mac-link-apps.sh
 end
 
 #-------------------------------------------------------------------
