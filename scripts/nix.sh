@@ -40,6 +40,11 @@ then
 	do
 		~/.nix-profile/bin/nix-env --install "$PKG"
 	done<darwin/nix-pkgs
+	echo "Installing Homebrew"
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	cd darwin/
+	brew bundle
+	cd ..
 fi
 
 echo "$HOME/.nix-profile/bin/fish" | sudo tee -a /etc/shells
