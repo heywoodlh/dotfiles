@@ -45,3 +45,25 @@ set -x NIXPKGS_CONFIG "$HOME/.nix/config.nix"
 set -x NIXOS_CONFIG "$HOME/.nix/os/config.nix"
 set -x NIX_LINK "$HOME/.nix-profile"
 set -x NIX_USER_PROFILE_DIR "/nix/var/nix/profiles/per-user/$USER"
+set -x NIX_IGNORE_SYMLINK_STORE 1
+
+
+
+if test -f /etc/ssl/certs/ca-certificates.crt
+  set -x NIX_SSL_CERT_FILE "/etc/ssl/certs/ca-certificates.crt"
+
+else if test -f /etc/ssl/ca-bundle.pem
+  set -x NIX_SSL_CERT_FILE "/etc/ssl/ca-bundle.pem"
+
+else if test -f /etc/ssl/certs/ca-bundle.crt
+  set -x NIX_SSL_CERT_FILE "/etc/ssl/certs/ca-bundle.crt"
+
+else if test -f /etc/pki/tls/certs/ca-bundle.crt
+  set -x NIX_SSL_CERT_FILE "/etc/pki/tls/certs/ca-bundle.crt"
+
+else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
+  set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
+
+else if test -f "$NIX_LINK/etc/ca-bundle.crt"
+  set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
+end
