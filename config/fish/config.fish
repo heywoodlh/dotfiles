@@ -47,7 +47,9 @@ set -x NIX_LINK "$HOME/.nix-profile"
 set -x NIX_USER_PROFILE_DIR "/nix/var/nix/profiles/per-user/$USER"
 set -x NIX_IGNORE_SYMLINK_STORE 1
 
-
+if uname -a | grep -iq 'Linux'
+  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$HOME/.local/share/:/usr/share:$XDG_DATA_DIRS"
+end
 
 if test -f /etc/ssl/certs/ca-certificates.crt
   set -x NIX_SSL_CERT_FILE "/etc/ssl/certs/ca-certificates.crt"
