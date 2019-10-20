@@ -3,7 +3,7 @@ function amap
 end
 
 function arpspoof
-  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full arpspoof -i eth0 
+  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full arpspoof -i eth0 $argv
 end 
 
 function assetfinder
