@@ -195,6 +195,10 @@ function searchsploit
   docker run --rm booyaabes/kali-linux-full searchsploit $argv
 end
 
+function setoolkit
+  docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full setoolkit $argv
+end
+
 function sniper
   docker run --rm -ti menzo/sn1per-docker sniper $argv
 end
