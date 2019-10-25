@@ -28,4 +28,4 @@ for file in $files; do
     ln -sf $dir/$file ~/.$file
 done
 
-cp config.h ~/.st-term/config.h
+ln -s $(realpath config.h) $HOME/.st-term/config.h

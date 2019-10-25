@@ -77,4 +77,4 @@ git module do-scripts:
     url: https://github.com/heywoodlh/do-scripts
 
 git module st-term:
-    url: https://git.suckless.org/st
+    url: https://github.com/LukeSmithxyz/st
