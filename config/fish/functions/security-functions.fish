@@ -211,6 +211,14 @@ function socat
   docker run --rm -w /data -v (pwd):/data -v /tmp:/tmp --net host booyaabes/kali-linux-full socat $argv
 end
 
+function st-server
+  docker run -d --name st-server -p 5000:5000 silenttrinity /opt/SILENTTRINITY/st.py teamserver 0.0.0.0 $argv[1]
+end
+
+function st-client
+  docker run -it --rm silenttrinity /opt/SILENTTRINITY/st.py client $argv[1]
+end
+
 function telnet
   docker run --rm -i heywoodlh/telnet telnet $argv
 end
