@@ -223,7 +223,7 @@ function st-client
   if test -z $argv[1]
     echo 'usage: st-client wss://<username>:<teamserver_password>@<teamserver_ip>:5000'
   else
-    docker run -it --rm heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py client $argv[1]
+    docker run --net host -it --rm heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py client $argv[1]
   end
 end
 
