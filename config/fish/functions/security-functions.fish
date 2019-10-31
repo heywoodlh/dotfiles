@@ -215,7 +215,7 @@ function st-server
   if test -z $argv[1]
     echo 'usage: st-server [password]'
   else
-    docker run -d --name st-server -p 5000:5000 heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py teamserver 0.0.0.0 $argv[1]
+    docker run -d --name st-server --net host heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py teamserver 0.0.0.0 $argv[1]
   end
 end
 
