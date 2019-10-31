@@ -212,11 +212,19 @@ function socat
 end
 
 function st-server
-  docker run -d --name st-server -p 5000:5000 silenttrinity /opt/SILENTTRINITY/st.py teamserver 0.0.0.0 $argv[1]
+  if test -z $argv[1]
+    echo 'usage: st-server [password]'
+  else
+    docker run -d --name st-server -p 5000:5000 heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py teamserver 0.0.0.0 $argv[1]
+  end
 end
 
 function st-client
-  docker run -it --rm silenttrinity /opt/SILENTTRINITY/st.py client $argv[1]
+  if test -z $argv[1]
+    echo 'usage: st-client wss://<username>:<teamserver_password>@<teamserver_ip>:5000'
+  else
+    docker run -it --rm heywoodlh/silenttrinity /opt/SILENTTRINITY/st.py client $argv[1]
+  end
 end
 
 function telnet
