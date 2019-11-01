@@ -211,6 +211,14 @@ function setoolkit
   docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full setoolkit $argv
 end
 
+function smb-server
+  if test -z $argv[1]
+    echo 'usage: smb-server /path/to/folder'
+  else
+    docker run -d --name smb -p 139:139 -p 445:445 -v $argv[1]:/mount dperson/samba
+  end
+end
+
 function sniper
   docker run --rm -ti menzo/sn1per-docker sniper $argv
 end
