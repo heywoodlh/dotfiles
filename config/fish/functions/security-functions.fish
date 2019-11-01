@@ -215,7 +215,7 @@ function smb-server
   if test -z $argv[1]
     echo 'usage: smb-server /path/to/folder'
   else
-    docker run -d --name smb -p 139:139 -p 445:445 -v $argv[1]:/mount dperson/samba
+    docker run -d --name smb -p 139:139 -p 445:445 -v $argv[1]:/mount dperson/samba -p -s "public;/mount"
   end
 end
 
