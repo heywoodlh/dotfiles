@@ -175,6 +175,14 @@ function netdiscover
   docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full netdiscover $argv
 end
 
+function nfs-server
+  if test -z $argv[1]
+    echo 'usage: nfs-server /path/to/folder'
+  else
+    docker run -d --name nfs --privileged -v $argv[1]:/nfsshare -e SHARED_DIRECTORY=/nfsshare itsthenetwork/nfs-server-alpine:latest
+  end
+end
+
 function nikto
   docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full nikto $argv
 end
