@@ -147,8 +147,12 @@ function meg
   end
 end
 
+function merlin
+  docker run --name merlin -d --restart unless-stopped --net host -it heywoodlh/merlin bash
+end
+
 function msfconsole
-  docker run -it --rm --net host  -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data booyaabes/kali-linux-full msfconsole $argv
+  docker run -it --rm --net host -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data booyaabes/kali-linux-full msfconsole $argv
 end
 
 function msfvenom
