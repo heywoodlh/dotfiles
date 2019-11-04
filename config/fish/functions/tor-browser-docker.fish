@@ -9,11 +9,11 @@ function tor-browser-docker
       docker run -d \
         -v tor_browser:/usr/local/bin/Browser/TorBrowser/Data/Browser/profile.default \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        --user "$UID" \
         -e DISPLAY=unix$DISPLAY \
         --device /dev/snd \
         -v $HOME/Downloads:/usr/local/bin/Browser/Downloads \
         --name tor-browser \
+        --shm-size 2g \
         jess/tor-browser
     end
   end
