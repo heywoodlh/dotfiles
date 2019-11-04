@@ -2,6 +2,7 @@ brew "mas"
 brew "choose-gui"
 brew "dnscrypt-proxy"
 brew "md5sha1sum", link: false
+brew "socat"
 cask "blockblock"
 cask "do-not-disturb"
 cask "docker"
