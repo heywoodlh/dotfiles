@@ -1,6 +1,6 @@
 set fish_greeting ''
 
-#eval (python3 -m virtualfish compat_aliases)
+eval (python3 -m virtualfish compat_aliases)
 
 if test -f ~/.bw_session
     set BW_SESSION (cat ~/.bw_session)
@@ -33,6 +33,12 @@ end
 if test -d ~/go/bin
   if not echo "$PATH" | grep -q '~/go/bin'
     set -gx PATH ~/go/bin $PATH
+  end
+end
+
+if test -d /usr/X11R6/bin
+  if not echo "$PATH" | grep -q '/usr/X11R6/bin'
+    set -gx PATH /usr/X11R6/bin $PATH
   end
 end
 
