@@ -81,7 +81,7 @@ function gobuster
 end
 
 function gophish
-  echo 'starting gophish at http://localhost:3333'
+  echo 'starting gophish at https://localhost:3333'
   docker run -d --name gophish -p 3333:3333 -p 8080:80 matteoggl/gophish
   if docker ps | grep -iq gophish
     echo 'gophish is running'
