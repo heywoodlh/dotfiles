@@ -46,6 +46,10 @@ function dnswalk
   docker run -it --rm booyaabes/kali-linux-full dnswalk $argv
 end
 
+function evilginx
+  docker run -it -p 80:80 -p 443:443 heywoodlh/evilginx $argv
+end
+
 function fsociety
   set working_dir (pwd)
   git clone https://github.com/Manisso/fsociety ~/.fsociety
