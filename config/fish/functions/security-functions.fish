@@ -80,6 +80,17 @@ function gobuster
   docker run --rm -i -w /data -v $secListDir:/data nateysmith/bugbountytools:latest bash -c "gobuster $argv"
 end
 
+function gophish
+  echo 'starting gophish at http://localhost:3333'
+  docker run -d --name gophish -p 3333:3333 -p 8080:80 matteoggl/gophish
+  if docker ps | grep -iq gophish
+    echo 'gophish is running'
+    echo 'default creds: admin:gophish'
+  else
+    echo 'gophish unable to start'
+  end
+end
+
 function gron
   docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "gron $argv"
 end
@@ -110,7 +121,14 @@ function inception
 end
 
 function openvas
+  echo 'starting openvas at https://localhost'
   docker run -d -p 443:443 -p 9390:9390 --name openvas mikesplain/openvas
+  if docker ps | grep -iq 'openvas'
+    echo 'openvas is running'
+    echo 'default creds: admin:admin'
+  else
+    echo 'openvas has crashed'
+  end
 end
 
 function kali
