@@ -47,7 +47,7 @@ function dnswalk
 end
 
 function evilginx
-  docker run -it -p 80:80 -p 443:443 heywoodlh/evilginx $argv
+  docker run -it -p 80:80 -p 443:443 heywoodlh/evilginx2 $argv
 end
 
 function fsociety
