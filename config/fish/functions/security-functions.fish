@@ -51,6 +51,7 @@ function evilginx
   if docker ps | grep -q evilginx
     docker exec -it evilginx evilginx
   else
+    docker pull heywoodlh/evilginx2
     docker run --name evilginx -it -p 53:53 -p 80:80 -p 443:443 -v ~/Documents/evilginx:/go/src/github.com/kgretzky/evilginx2 heywoodlh/evilginx2 $argv
   end
 end
