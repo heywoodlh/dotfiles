@@ -48,7 +48,7 @@ end
 
 function evilginx
   mkdir -p ~/Documents/evilginx
-  if docker ps | grep -q evilginx
+  if docker ps -a | grep -q evilginx
     docker exec -it evilginx evilginx
   else
     docker pull heywoodlh/evilginx2
