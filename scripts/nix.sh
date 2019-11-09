@@ -31,6 +31,10 @@ then
 	then
 		echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> ~/.profile
 	fi
+	echo "Setting up .desktop files"
+	sudo cp ../usr/share/applications/*.desktop /usr/share/applications/
+	mkdir -p ~/Documents/Icons && cp ../icons/* ~/Documents/Icons
+	update-desktop-database
 fi
 
 if uname -a | grep -iq 'darwin'

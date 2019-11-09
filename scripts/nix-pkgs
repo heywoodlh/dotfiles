@@ -13,8 +13,6 @@ fzf
 git
 gnupg
 go
-hashcat
-hashcat-utils
 htop
 jq
 kitty
@@ -23,9 +21,7 @@ lynis
 neofetch
 nodejs
 openconnect
-openconnect_pa
 password-store
-protonmail-bridge
 pstree
 pwgen
 python3.7
@@ -39,10 +35,7 @@ vim
 virtualbox
 virtualbox-modules
 vlc
-wavebox
 weechat
 wget
 wine
 winetricks
-wire-desktop
-wireshark

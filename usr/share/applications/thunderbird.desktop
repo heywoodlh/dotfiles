@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c thunderbird
+Terminal=false
+Name=Thunderbird
+Categories=Network;WebBrowser;Security;
+Icon=/home/heywoodlh/Documents/Icons/thunderbird.png
+Comment=Tor Browser Bundle built by torproject.org
+GenericName=Web Browser
