@@ -7,7 +7,7 @@ function vscode-docker
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -e DISPLAY=unix$DISPLAY \
         --device /dev/snd \
-	-v $HOME:/home/user \
+	-v $HOME/git:/home/user/git \
         --name vscode \
         jess/vscode
     end
