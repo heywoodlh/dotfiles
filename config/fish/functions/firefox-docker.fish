@@ -4,9 +4,7 @@ function firefox-docker
       docker start firefox
     else
       docker run -d \
-	--memory 2gb \
 	--net host \
-	--cpuset-cpus 0 \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v "$HOME/.firefox/cache:/root/.cache/mozilla" \
@@ -20,6 +18,7 @@ function firefox-docker
 	--device /dev/snd \
 	--device /dev/dri \
 	--name firefox \
+	--shm-size=4G \
 	jess/firefox "$argv"
     end
   end
