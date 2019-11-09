@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c wavebox
+Terminal=false
+Name=Wavebox
+Categories=Network;WebBrowser;Security;
+Icon=/home/heywoodlh/Documents/Icons/wavebox.png
+GenericName=Web Browser

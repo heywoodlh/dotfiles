@@ -9,6 +9,9 @@ function wavebox
       -e DISPLAY \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
       -v $HOME/.config/wavebox:/home/wavebox/.local/share/wavebox/ \
+      -v $HOME/Downloads:/home/wavebox/Downloads \
+      -v $HOME/Documents:/home/wavebox/Documents \
+      -v $HOME/Desktop:/home/wavebox/Desktop \
       heywoodlh/wavebox
   end
 end

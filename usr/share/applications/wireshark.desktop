@@ -5,5 +5,4 @@ Terminal=false
 Name=Wireshark
 Categories=Network;Security;
 Icon=/home/heywoodlh/Documents/Icons/wireshark.png
-Comment=Tor Browser Bundle built by torproject.org
 GenericName=Web Browser
