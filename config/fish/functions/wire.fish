@@ -8,10 +8,10 @@ function wire
       --name wire \
       -e DISPLAY \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-      -v $HOME/.config/wire:/root/.config/Wire/ \
-      -v $HOME/Downloads:/root/Downloads \
-      -v $HOME/Documents:/root/Documents \
-      -v $HOME/Desktop:/root/Desktop \
+      -v $HOME/.config/wire:/home/wire/.config/Wire/ \
+      -v $HOME/Downloads:/home/wire/Downloads \
+      -v $HOME/Documents:/home/wire/Documents \
+      -v $HOME/Desktop:/home/wire/Desktop \
       heywoodlh/wire
   end
 end
