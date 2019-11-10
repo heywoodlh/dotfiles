@@ -15,6 +15,9 @@ function wavebox
       -v $HOME/Downloads:/home/wavebox/Downloads \
       -v $HOME/Documents:/home/wavebox/Documents \
       -v $HOME/Desktop:/home/wavebox/Desktop \
+      --device /dev/snd \
+      --device /dev/dri \
+      --shm-size=4G \
       -u wavebox \
       heywoodlh/wavebox
   end

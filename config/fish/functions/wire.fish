@@ -15,6 +15,9 @@ function wire
       -v $HOME/Downloads:/home/wire/Downloads \
       -v $HOME/Documents:/home/wire/Documents \
       -v $HOME/Desktop:/home/wire/Desktop \
+      --device /dev/snd \
+      --device /dev/dri \
+      --shm-size=4G \
       -u wire \
       heywoodlh/wire
   end
