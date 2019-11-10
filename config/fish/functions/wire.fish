@@ -1,6 +1,6 @@
 function wire
-  if docker ps -a | grep -q wire
-    docker start wire
+  if docker ps -a | grep -q wire-desktop
+    docker start wire-desktop
   else
     if ! docker volume ls | grep -q wire_config
       docker volume create wire_config
@@ -8,7 +8,7 @@ function wire
     docker pull heywoodlh/wire:latest
     docker run -d \
       --net host \
-      --name wire \
+      --name wire-desktop \
       -e DISPLAY \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
       -v wire_config:/home/wire/.config/Wire/ \
