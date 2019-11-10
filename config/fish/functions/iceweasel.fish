@@ -14,7 +14,7 @@ function iceweasel
          -e GDK_SCALE \
          -e GDK_DPI_SCALE \
          -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-         -v iceweasel_config:/home/iceweasel/.mozilla/firefox \
+         -v iceweasel_config:/home/iceweasel/.mozilla/firefox/default.profile/ \
          -v $HOME/Downloads:/home/iceweasel/Downloads \
          -v $HOME/Documents:/home/iceweasel/Documents \
          -v $HOME/Desktop:/home/iceweasel/Desktop \
