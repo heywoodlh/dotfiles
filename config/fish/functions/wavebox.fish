@@ -2,6 +2,9 @@ function wavebox
   if docker ps -a | grep -q wavebox
     docker start wavebox
   else
+    if ! docker volume ls | grep -q wavebox_config
+      docker volume create wavebox_config
+    end
     docker pull heywoodlh/wavebox:latest
     docker run -d \
       --net host \
@@ -12,6 +15,7 @@ function wavebox
       -v $HOME/Downloads:/home/wavebox/Downloads \
       -v $HOME/Documents:/home/wavebox/Documents \
       -v $HOME/Desktop:/home/wavebox/Desktop \
+      -u wavebox \
       heywoodlh/wavebox
   end
 end

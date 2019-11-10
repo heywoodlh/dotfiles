@@ -2,7 +2,7 @@ function thunderbird
   if docker ps -a | grep -q thunderbird
     docker start thunderbird
   else
-    if ! docker volume ls | grep -q thunderbird
+    if ! docker volume ls | grep -q thunderbird_config
       docker volume create thunderbird_config
     end
     docker pull heywoodlh/thunderbird:latest
