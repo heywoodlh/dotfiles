@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c iceweasel
+Terminal=false
+Name=Iceweasel
+Categories=Network;WebBrowser;Security;
+Icon=/home/heywoodlh/Documents/Icons/iceweasel.png
+GenericName=Web Browser
