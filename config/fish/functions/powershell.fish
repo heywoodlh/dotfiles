@@ -1,3 +1,3 @@
 function powershell
-  docker run -it jessfraz/powershell
+  docker run -it jess/powershell
 end
