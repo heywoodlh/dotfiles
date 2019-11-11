@@ -21,6 +21,7 @@ function iceweasel
          --device /dev/snd \
          --device /dev/dri \
          --shm-size=4G \
+         --group-add audio \
          -u iceweasel \
          heywoodlh/iceweasel
     end

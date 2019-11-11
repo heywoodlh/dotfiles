@@ -17,7 +17,8 @@ function wire
       -v $HOME/Desktop:/home/wire/Desktop \
       --device /dev/snd \
       --device /dev/dri \
-      --shm-size=4G \
+      --shm-size=2G \
+      --group-add audio \
       -u wire \
       heywoodlh/wire
   end

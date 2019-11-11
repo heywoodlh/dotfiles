@@ -17,6 +17,7 @@ function firefox-docker
 	-e GDK_DPI_SCALE \
 	--device /dev/snd \
 	--device /dev/dri \
+        --group-add audio \
 	--name firefox \
 	--shm-size=4G \
 	jess/firefox "$argv"

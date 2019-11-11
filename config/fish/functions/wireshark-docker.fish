@@ -8,6 +8,7 @@ function wireshark-docker
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -e DISPLAY=unix$DISPLAY \
         --device /dev/snd \
+        --group-add audio \
         -v (pwd):/wireshark \
         --name wireshark \
         jess/wireshark

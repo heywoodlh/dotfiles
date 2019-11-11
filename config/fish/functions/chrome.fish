@@ -19,6 +19,7 @@ function chrome
         -v /dev/shm:/dev/shm \
         -v /etc/hosts:/etc/hosts \
         --device /dev/snd \
+        --group-add audio \
         --device /dev/dri \
         --device /dev/video0 \
         --group-add audio \

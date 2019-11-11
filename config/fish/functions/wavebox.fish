@@ -17,6 +17,7 @@ function wavebox
       -v $HOME/Desktop:/home/wavebox/Desktop \
       --device /dev/snd \
       --device /dev/dri \
+      --group-add audio \
       --shm-size=4G \
       -u wavebox \
       heywoodlh/wavebox
