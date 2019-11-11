@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c vscode
+Terminal=false
+Name=VSCode
+Categories=Development;Developer;Code
+Icon=/home/heywoodlh/Documents/Icons/vscode.png
+GenericName=Development
