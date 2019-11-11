@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c virtualbox
+Terminal=false
+Name=Virtualbox
+Categories=Network;WebBrowser;Security;
+Icon=/home/heywoodlh/Documents/Icons/virtualbox.png
+GenericName=Web Browser
