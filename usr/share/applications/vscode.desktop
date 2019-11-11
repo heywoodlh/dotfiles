@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c vscode
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c vscode-docker
 Terminal=false
 Name=VSCode
 Categories=Development;Developer;Code
