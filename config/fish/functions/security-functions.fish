@@ -14,10 +14,6 @@ function bettercap
   docker run -it --privileged --net=host bettercap/bettercap $argv
 end
 
-function blackwidow
-    docker run -it blackwidow $argv
-end
-
 function commix
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full commix $argv
 end
