@@ -4,5 +4,5 @@ function nix-channel
     -v ~/.nix-profile:/home/nix/.nix-profile \
     -u nix \
     -v /nix:/nix \
-    heywoodlh/nix nix-channel $argv
+    heywoodlh/nix /home/nix/.nix-profile/bin/nix-channel $argv
 end

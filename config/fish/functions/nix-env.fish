@@ -3,5 +3,6 @@ function nix-env
     -v ~/.nix:/home/nix/.nix \
     -v ~/.nix-profile:/home/nix/.nix-profile \
     -v /nix:/nix \
-    heywoodlh/nix nix-env $argv
+    -u nix \
+    heywoodlh/nix /home/nix/.nix-profile/bin/nix-env $argv
 end
