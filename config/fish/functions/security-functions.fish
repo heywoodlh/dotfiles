@@ -10,6 +10,19 @@ function assetfinder
   docker run --rm -i heywoodlh/tomnomnom-tools:latest assetfinder $argv
 end
 
+function beef
+  mkdir -p ~/Documents/beef
+  if test ! -f ~/Documents/beef/config.yaml
+    curl 'https://gist.githubusercontent.com/heywoodlh/5d503e14f91ff9e5d6d4794aeffda652/raw/9bf62f88c3ca54255a3f5f2e85f25ebededbe8aa/config.yaml' -o ~/Documents/beef
+  end
+  if docker ps -a | grep 'beef-framework'
+    docker start beef-framework
+  else
+    docker run --name beef-framework -d -p 3000:3000 -v ~/Documents/beef/config.yaml:/opt/beef/config.yaml heywoodlh/beef $argv
+  end
+  echo 'BEEF running on port 3000 -- config located at ~/Documents/beef/config.yaml'
+end
+
 function bettercap
   docker run -it --privileged --net=host bettercap/bettercap $argv
 end
