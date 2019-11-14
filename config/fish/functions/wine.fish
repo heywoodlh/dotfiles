@@ -1,4 +1,5 @@
 function wine
+  mkdir -p ~/.wine
   docker run -it --rm \
          -v ~/.wine:/home/wine/.wine \
          --net host \
