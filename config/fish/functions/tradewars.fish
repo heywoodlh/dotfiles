@@ -8,12 +8,14 @@ function tradewars
       end
       docker pull heywoodlh/tradewars:latest
       docker run -d \
+               --restart unless-stopped \
                --net host \
                --name tradewars \
                -e DISPLAY \
                -e GDK_SCALE \
                -e GDK_DPI_SCALE \
                -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+               -v tradewars_config:/home/wine/.wine \
                --shm-size=4G \
                heywoodlh/tradewars
     end
