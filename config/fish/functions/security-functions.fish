@@ -13,7 +13,7 @@ end
 function beef
   mkdir -p ~/Documents/beef
   if test ! -f ~/Documents/beef/config.yaml
-    curl 'https://gist.githubusercontent.com/heywoodlh/5d503e14f91ff9e5d6d4794aeffda652/raw/9bf62f88c3ca54255a3f5f2e85f25ebededbe8aa/config.yaml' -o ~/Documents/beef
+    curl 'https://gist.githubusercontent.com/heywoodlh/5d503e14f91ff9e5d6d4794aeffda652/raw/9bf62f88c3ca54255a3f5f2e85f25ebededbe8aa/config.yaml' -o ~/Documents/beef/config.yaml
   end
   if docker ps -a | grep 'beef-framework'
     docker start beef-framework
