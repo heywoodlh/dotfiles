@@ -11,7 +11,5 @@ function wine
          --device /dev/dri \
          --shm-size=4G \
          --group-add audio \
-         -v (pwd):/tmp/wine \
-         -w /tmp/wine \
          heywoodlh/wine winecfg $argv
 end
