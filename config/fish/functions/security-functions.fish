@@ -15,12 +15,12 @@ function beef
   if test ! -f ~/Documents/beef/config.yaml
     curl 'https://gist.githubusercontent.com/heywoodlh/5d503e14f91ff9e5d6d4794aeffda652/raw/9bf62f88c3ca54255a3f5f2e85f25ebededbe8aa/config.yaml' -o ~/Documents/beef/config.yaml
   end
-  if docker ps -a | grep 'beef-framework'
+  if docker ps -a | grep -q 'beef-framework'
     docker start beef-framework
   else
     docker run --name beef-framework -d -p 3000:3000 -v ~/Documents/beef/config.yaml:/opt/beef/config.yaml heywoodlh/beef $argv
   end
-  echo 'BEEF running on port 3000 -- config located at ~/Documents/beef/config.yaml'
+  printf "\n\n\nBEEF started!\nBEEF admin panel: http://localhost:3000/ui/panel\nconfig located at ~/Documents/beef/config.yaml"
 end
 
 function bettercap
