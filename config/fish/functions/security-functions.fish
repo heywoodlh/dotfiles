@@ -123,6 +123,14 @@ function hping3
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full hping3 $argv
 end
 
+function http-server
+  if test -z $argv[1]
+    echo 'usage: http-server /path/to/folder'
+  else
+    docker run -d --name http -p 80:80 -v $argv[1]:/usr/local/apache2/htdocs httpd:latest
+  end
+end
+
 function httping
   docker run --rm bretfisher/httping $argv
 end
@@ -330,6 +338,10 @@ end
 
 function whatismyip
   curl 'https://api.ipify.org?format=text'
+end
+
+function wifite
+  docker run -it --rm --net host --privileged -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority booyaabes/kali-linux-full wifite $argv
 end
 
 function wpscan
