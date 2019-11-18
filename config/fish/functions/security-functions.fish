@@ -341,7 +341,7 @@ function whatismyip
 end
 
 function wifite
-  docker run -it --rm --net host --privileged -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority -w /tmp/wifite -v (pwd):/tmp/wifite booyaabes/kali-linux-full wifite $argv
+  docker run -it --rm --net host --privileged -w /tmp/wifite -v (pwd):/tmp/wifite heywoodlh/wifite wifite $argv
 end
 
 function wpscan
