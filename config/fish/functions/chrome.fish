@@ -3,30 +3,26 @@ function chrome
     if docker ps -a | grep -q 'chrome'
       docker start chrome
     else
-      if ! docker volume ls -q | grep -q chrome
-        docker volume create chrome
+      if docker volume ls | grep -q 'chrome_data'
+        docker volume create chrome_data
       end
-
       docker run -d \
         --net host \
         -v /etc/localtime:/etc/localtime:ro \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -e DISPLAY=unix$DISPLAY \
+        -e DISPLAY \
         -v $HOME/Downloads:/root/Downloads \
         -v $HOME/Pictures:/root/Pictures \
         -v $HOME/Iso:/root/Iso \
-        -v chrome:/data \
+        -v chrome_data:/data \
         -v /dev/shm:/dev/shm \
         -v /etc/hosts:/etc/hosts \
         --device /dev/snd \
         --group-add audio \
         --device /dev/dri \
-        --device /dev/video0 \
-        --group-add audio \
-        --group-add video \
         --name chrome \
 	--cap-add SYS_ADMIN \
-        jess/chrome --user-data-dir=/data --force-device-scale-factor=1 $argv
+        heywoodlh/chrome --user-data-dir=/data --force-device-scale-factor=1 $argv
     end
   end
 end
