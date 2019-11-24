@@ -1,4 +1,4 @@
-function wireshark-docker
+function wireshark
   if uname -a | grep -iq linux
     if docker ps -a | grep -q 'wireshark'
       docker start wireshark
