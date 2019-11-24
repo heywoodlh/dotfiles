@@ -193,7 +193,7 @@ function meg
 end
 
 function merlin
-  docker run --name merlin -d --restart unless-stopped --net host -it heywoodlh/merlin bash
+  docker run --name merlin -d --restart unless-stopped --net host -it heywoodlh/merlin "/usr/bin/merlinserver -i 0.0.0.0" 
 end
 
 function msfconsole
