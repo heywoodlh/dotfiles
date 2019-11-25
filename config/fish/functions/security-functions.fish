@@ -193,7 +193,12 @@ function meg
 end
 
 function merlin
-  docker run --name merlin -d --restart unless-stopped --net host -it heywoodlh/merlin "/usr/bin/merlinserver -i 0.0.0.0" 
+  if test (command -v screen)
+    screen -S merlin-server -d -m docker run --name merlin --restart unless-stopped --net host -it heywoodlh/merlin /usr/bin/merlinserver -i 0.0.0.0 $argv
+    echo "Attach to merlin server: screen -r merlin-server"
+  else
+    echo "Please install screen before running merlin function"
+  end
 end
 
 function msfconsole
