@@ -194,6 +194,7 @@ end
 
 function merlin
   if test (command -v screen)
+    docker pull heywoodlh/merlin
     screen -S merlin-server -d -m docker run --name merlin --restart unless-stopped --net host -it heywoodlh/merlin /usr/bin/merlinserver -i 0.0.0.0 $argv
     echo "Attach to merlin server: screen -r merlin-server"
   else
