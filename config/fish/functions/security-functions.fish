@@ -201,6 +201,10 @@ function merlin
   end
 end
 
+function mitmproxy
+  docker run --rm -it -p 8080:8080 -p 127.0.0.1:8081:8081 mitmproxy/mitmproxy mitmweb --web-iface 0.0.0.0 $argv
+end
+
 function msfconsole
   docker run -it --rm --net host -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data booyaabes/kali-linux-full msfconsole $argv
 end
