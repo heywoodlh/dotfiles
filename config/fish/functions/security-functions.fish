@@ -119,6 +119,10 @@ function gscript
   docker run -it -v /tmp:/tmp -v ~/Documents/gscript:/root/Documents/gscript gen0cide/gscript:v1 $argv
 end
 
+function h8mail
+  docker run -ti kh4st3x00/h8mail $argv
+end
+
 function hping3
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full hping3 $argv
 end
