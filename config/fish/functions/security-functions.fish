@@ -120,7 +120,11 @@ function gscript
 end
 
 function h8mail
-  docker run -ti kh4st3x00/h8mail $argv
+  if test -f ~/.config/h8mail/config
+    docker run -v (pwd):/tmp/h8mail -w /tmp/h8mail -v ~/.config/h8mail/config:/tmp/config -ti kh4st3x00/h8mail -c /tmp/config $argv
+  else
+    docker run -v (pwd):/tmp/h8mail -w /tmp/h8mail -ti kh4st3x00/h8mail $argv
+  end
 end
 
 function hping3
