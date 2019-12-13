@@ -8,3 +8,5 @@ docker
 kitty
 sxhkd
 rofi
+termite
+termite-terminfo
