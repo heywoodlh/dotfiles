@@ -22,6 +22,7 @@ function iceweasel
          --device /dev/dri \
          --shm-size=4G \
          --group-add audio \
+         -v /etc/localtime:/etc/localtime \
          -u iceweasel \
          heywoodlh/iceweasel
     end

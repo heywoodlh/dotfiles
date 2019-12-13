@@ -13,6 +13,7 @@ function thunderbird
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
       -u thunderbird \
       -v thunderbird_config:/home/thunderbird/.thunderbird/ \
+      -v /etc/localtime:/etc/localtime \
       heywoodlh/thunderbird thunderbird
   end
 end
