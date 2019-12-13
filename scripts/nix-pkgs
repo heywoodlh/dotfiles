@@ -1,5 +1,4 @@
 ansible
-asciinema
 bitwarden-cli
 clamav
 curl
@@ -15,17 +14,15 @@ gnupg
 go
 htop
 jq
-kitty
 lsof
 lynis
 neofetch
 nodejs
-openconnect
 password-store
 pstree
 pwgen
-python3.7
-python3.7-pip
+python3.8 
+python3.8-pip
 qbittorrent
 sshfs-fuse
 tmux

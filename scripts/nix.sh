@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DOTFILES_DIR="$HOME/.dotfiles"
+
 NIX_PATH="$HOME/.nix-defexpr/channels"
 NIXPKGS_CONFIG="$HOME/.nix/config.nix"
 NIXOS_CONFIG="$HOME/.nix/os/config.nix"
@@ -8,12 +10,12 @@ NIX_USER_PROFILE_DIR="/nix/var/nix/profiles/per-user/$USER"
 
 sh <(curl https://nixos.org/nix/install) --no-daemon
 
-~/.nix-profile/bin/nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-~/.nix-profile/bin/nix-channel --update
+"$HOME"/.nix-profile/bin/nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+"$HOME"/.nix-profile/bin/nix-channel --update
 
 while read PKG
 do
-	~/.nix-profile/bin/nix-env --install "$PKG"
+	"$HOME"/.nix-profile/bin/nix-env --install "$PKG"
 done<nix-pkgs
 
 if uname -a | grep -iq 'linux'
@@ -21,19 +23,21 @@ then
 	echo "Installing Nix Packages in linux/nix-pkgs"
 	while read PKG
 	do
-		~/.nix-profile/bin/nix-env --install "$PKG"
+		"$HOME"/.nix-profile/bin/nix-env --install "$PKG"
 	done<linux/nix-pkgs
-	echo "Running Firefox setup script"
-	cd linux
-	./firefox-config.sh
-	cd ..
-	if ! grep -iq 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' ~/.profile
+	if [[ -f "$HOME/.profile" ]]
 	then
-		echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> ~/.profile
+		if ! grep -iq 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' "$HOME"/.profile
+		then
+			echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> "$HOME"/.profile
+		fi
+	else 
+		echo 'export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"' >> "$HOME"/.profile
 	fi
+	source "$HOME"/.profile
 	echo "Setting up .desktop files"
-	sudo cp ../usr/share/applications/*.desktop /usr/share/applications/
-	mkdir -p ~/Documents/Icons && cp ../icons/* ~/Documents/Icons
+	sudo cp "$DOTFILES_DIR"/usr/share/applications/*.desktop /usr/share/applications/
+	mkdir -p "$HOME"/Documents/Icons && cp $DOTFILES_DIR/icons/* "$HOME"/Documents/Icons
 	update-desktop-database
 fi
 
@@ -42,39 +46,37 @@ then
 	echo "Installing Nix Packages in darwin/nix-pkgs"
 	while read PKG
 	do
-		~/.nix-profile/bin/nix-env --install "$PKG"
+		"$HOME"/.nix-profile/bin/nix-env --install "$PKG"
 	done<darwin/nix-pkgs
 	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	cd darwin/
+	cd $DOTFILES_DIR/scripts/darwin/
 	brew bundle
-	cd ..
-	~/.nix/shell/mac-link-apps.sh
+	cd $DOTFILES_DIR/scripts
+	"$HOME"/.nix/shell/mac-link-apps.sh
 fi
 
 echo "$HOME/.nix-profile/bin/fish" | sudo tee -a /etc/shells
 sudo chsh -s "$HOME/.nix-profile/bin/fish" "$USER"
 
-if [ ! -f ~/.bw_session ]
+if [ ! -f "$HOME"/.bw_session ]
 then
-        "$HOME"/.nix-profile/bin/bw unlock --raw > ~/.bw_session
+        "$HOME"/.nix-profile/bin/bw unlock --raw > "$HOME"/.bw_session
 fi
 
-SESSION="$(cat ~/.bw_session)"
+SESSION="$(cat "$HOME"/.bw_session)"
 
 if [ "$SESSION" == "You are not logged in." ]
 then
-        echo "You are not logged in to a Bitwarden instance."
-        echo "BW Server URL: "
-        read BW_SERVER
-        "$HOME"/.nix-profile/bin/bw config server "$BW_SERVER"
-        "$HOME"/.nix-profile/bin/bw login --raw > ~/.bw_session
+        echo "You are not logged in to Bitwarden."
+        "$HOME"/.nix-profile/bin/bw login --raw > "$HOME"/.bw_session
+	SESSION="$(cat "$HOME"/.bw_session)"
 fi
 
 "$HOME"/.nix-profile/bin/bw sync --session "$SESSION"
 
 
-"$HOME"/.nix-profile/bin/bw list items --search 'bw-onboarding-script' --session "$(cat ~/.bw_session)" | "$HOME"/.nix-profile/bin/jq -r '.[].notes' > /tmp/bw-setup.sh
+"$HOME"/.nix-profile/bin/bw list items --search 'bw-onboarding-script' --session "$(cat "$HOME"/.bw_session)" | "$HOME"/.nix-profile/bin/jq -r '.[].notes' > /tmp/bw-setup.sh
 chmod +x /tmp/bw-setup.sh
 
 /tmp/bw-setup.sh
