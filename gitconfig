@@ -7,7 +7,7 @@
     editor = vim
     autocrlf = input
     whitespace = cr-at-eol
-    excludesfile = /home/bclifford/.gitignore_global
+    excludesfile = /home/heywoodlh/.gitignore_global
     pager = less -+F
 [mergetool]
     prompt = false
