@@ -1,4 +1,4 @@
-This repo serves as a simple Unix environment setup. Tested on Linux and OS X.
+Simple Unix environment setup via .dotfiles. Tested on Linux and MacOS.
 
 
 
