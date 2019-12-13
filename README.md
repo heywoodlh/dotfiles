@@ -8,18 +8,15 @@ Simple Unix environment setup via .dotfiles. Tested on Linux and MacOS.
 Installation Prerequisites:
 
 - Git installed.
-- Python 3 version of Peru installed (`sudo pip3 install peru`).
+- Python 3 and Python3 pip installed.
 
 #### Installation:
 
 ```bash
-sudo pip3 instal peru
-
 git clone https://github.com/heywoodlh/.dotfiles "$HOME"/.dotfiles &&\
 	cd ~/.dotfiles
 
-peru sync
-./.makesym.sh
+./sync.sh
 
 cd scripts
 ./install.sh

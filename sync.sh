@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 
-dir=~/.dotfiles
-olddir=~/.dotfiles_old
+if ! command -v peru
+then
+	if command -v pip3
+	then
+		sudo pip3 install peru
+	else
+		echo 'Please install python3-pip! Exiting.'
+		exit 1
+	fi
+fi
 
-# List of files/folders to symlink in homedir
-files="vim gitconfig xinitrc tmux.conf dircolors bw-scripts do-scripts nix"
+workingDir=$(pwd)
+cd ~/.dotfiles &&\
+	peru sync
+
+cd $workingDir
+
+dir=~/.dotfiles
+olddir=~/.dotfiles.old
+
+# List of files/folders to move to homedir
+files="vim gitconfig xinitrc tmux.conf bw-scripts nix"
 
 # Create .dotfiles_old in homedir
 mkdir -p $olddir
@@ -21,11 +38,11 @@ ln -s $dir/config ~/.config
 # Move any existing dotfiles to dotfiles_old directory, and create symlinks
 # from the homedir to any files in the ~/dotfiles
 for file in $files; do
-    if [[ -f ~/.$file ]]
-    then
-        mv ~/.$file $olddir
-    fi
-    ln -sf $dir/$file ~/.$file
+	if [[ -f ~/.$file ]]
+	then
+        	mv ~/.$file $olddir
+	fi
+	ln -s $dir/$file ~/.$file
 done
 
 mkdir -p "$HOME"/Pictures &&\
