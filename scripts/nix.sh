@@ -39,6 +39,11 @@ then
 	sudo cp "$DOTFILES_DIR"/usr/share/applications/*.desktop /usr/share/applications/
 	mkdir -p "$HOME"/Documents/Icons && cp $DOTFILES_DIR/icons/* "$HOME"/Documents/Icons
 	update-desktop-database
+	CURRENT_OS="$(/home/heywoodlh/.nix-profile/bin/lsb_release)"
+	if [[ "$CURRENT_OS" == "Arch Linux" ]]
+	then
+		"$DOTFILES_DIR"/scripts/arch/arch.sh
+	fi
 fi
 
 if uname -a | grep -iq 'darwin'
@@ -80,3 +85,5 @@ fi
 chmod +x /tmp/bw-setup.sh
 
 /tmp/bw-setup.sh
+
+sudo pip3 install virtualfish

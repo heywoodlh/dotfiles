@@ -8,10 +8,13 @@
 #
 
 control + super + s
-    ~/.bw-scripts/slab.sh
+    ~/.nix-profile/bin/fish -c ~/.bw-scripts/slab.sh
 
 control + super + 2
-    ~/.bw-scripts/2fa.sh
+    ~/.nix-profile/bin/fish -c ~/.bw-scripts/2fa.sh
 
 control + super + u
-    ~/.bw-scripts/unlock.sh
+    ~/.nix-profile/bin/fish -c ~/.bw-scripts/unlock.sh
+
+control + alt + t
+    /usr/bin/kitty

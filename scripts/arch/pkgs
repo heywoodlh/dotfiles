@@ -1,6 +1,10 @@
 python-pip
 wireguard-arch
+wireguard-tools
 fundle-git
 arch-wiki-docs
-snapd
 cronie
+docker
+kitty
+sxhkd
+rofi

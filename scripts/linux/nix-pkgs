@@ -1,7 +1,6 @@
 wireguard
 wireguard-tools
 sxhkd
-zenity
 network-manager-applet
 bitwarden
 veracrypt
@@ -13,10 +12,9 @@ xterm
 xss-lock-git
 feh
 albert
-firefox-bin
 scrot
 siji
 i3lock-fancy-unstable
 dejavu-fonts
 keychain
-thunderbird
+lsb_release
