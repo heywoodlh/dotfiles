@@ -4,7 +4,7 @@ dir=~/.dotfiles
 olddir=~/.dotfiles_old
 
 # List of files/folders to symlink in homedir
-files="vim dircolors gitconfig Xresources xinitrc tmux.conf dircolors bw-scripts do-scripts nix"
+files="vim gitconfig xinitrc tmux.conf dircolors bw-scripts do-scripts nix"
 
 # Create .dotfiles_old in homedir
 mkdir -p $olddir
