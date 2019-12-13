@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dir=~/.dotfiles
 olddir=~/.dotfiles_old
 
 # List of files/folders to symlink in homedir
-files="bashrc bash_profile vim dircolors gitconfig Xresources xinitrc tmux.conf dircolors bw-scripts do-scripts chunkwm_plugins chunkwmrc st-term nix"
+files="bashrc bash_profile vim dircolors gitconfig Xresources xinitrc tmux.conf dircolors bw-scripts do-scripts nix"
 
 # Create .dotfiles_old in homedir
 mkdir -p $olddir
@@ -28,4 +28,5 @@ for file in $files; do
     ln -sf $dir/$file ~/.$file
 done
 
-ln -s $(realpath config.h) $HOME/.st-term/config.h
+mkdir -p "$HOME"/Pictures &&\
+       	ln -s "$HOME"/.dotfiles/wallpapers "$HOME"/Pictures/wallpapers

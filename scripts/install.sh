@@ -55,10 +55,12 @@ then
 	done<darwin/nix-pkgs
 	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	cd $DOTFILES_DIR/scripts/darwin/
+	cd "$DOTFILES_DIR"/scripts/darwin/
 	brew bundle
-	cd $DOTFILES_DIR/scripts
+	cd "$DOTFILES_DIR"/scripts
 	"$HOME"/.nix/shell/mac-link-apps.sh
+	mv "$DOTFILES_DIR"/config/chunkwm/* "$HOME" &&\
+		rmdir "$HOME"/config/chunkwm
 fi
 
 echo "$HOME/.nix-profile/bin/fish" | sudo tee -a /etc/shells
