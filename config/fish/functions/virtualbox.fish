@@ -17,6 +17,7 @@ function virtualbox
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=unix$DISPLAY \
     --privileged \
+    -v "$HOME/Iso:/root/Iso" \
     -v "$HOME/Documents/Virtualbox VMs:/root/Virtualbox VMs" \
     --name virtualbox \
     jess/virtualbox
