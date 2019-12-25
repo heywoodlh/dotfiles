@@ -1,4 +1,4 @@
-function tor-browser-docker
+function tor-browser
   if uname -a | grep -iq linux
     if docker ps -a | grep -q 'tor-browser'
       docker start tor-browser
