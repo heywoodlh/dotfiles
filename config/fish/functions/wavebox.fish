@@ -10,7 +10,10 @@ function wavebox
       --net host \
       --name wavebox \
       -e DISPLAY \
+      -e GDK_SCALE \
+      -e GDK_DPI_SCALE \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+      -v /etc/localtime:/etc/localtime \
       -v $HOME/.config/wavebox:/home/wavebox/.config/wavebox/ \
       -v $HOME/Downloads:/home/wavebox/Downloads \
       -v $HOME/Documents:/home/wavebox/Documents \

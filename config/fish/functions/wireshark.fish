@@ -10,6 +10,9 @@ function wireshark
         --device /dev/snd \
         --group-add audio \
         -v (pwd):/wireshark \
+        -v "$HOME"/Downloads:/home/wireshark/Downloads \
+        -v "$HOME"/Documents:/home/wireshark/Documents \
+	-v /dev/bus/usb:/dev/bus/usb \
         --name wireshark \
         jess/wireshark
     end

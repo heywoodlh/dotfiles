@@ -15,6 +15,7 @@ function wire
       -v $HOME/Downloads:/home/wire/Downloads \
       -v $HOME/Documents:/home/wire/Documents \
       -v $HOME/Desktop:/home/wire/Desktop \
+      -v /etc/localtime:/etc/localtime \
       --device /dev/snd \
       --device /dev/dri \
       --shm-size=2G \
