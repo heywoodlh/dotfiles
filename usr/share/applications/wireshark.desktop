@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c wireshark-docker
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c wireshark
 Terminal=false
 Name=Wireshark
 Categories=Network;Security;
