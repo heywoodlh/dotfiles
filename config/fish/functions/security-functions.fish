@@ -267,7 +267,17 @@ function responder
 end
 
 function sandbox
-  docker run --rm --net host --cap-add=NET_ADMIN --cap-add=NET_RAW --privileged heywoodlh/sandbox $argv
+  if docker ps -a | grep -q 'sandbox'
+    docker start sandbox > /dev/null
+  else
+    docker run -d --name sandbox --cap-add=NET_ADMIN --cap-add=NET_RAW --privileged heywoodlh/sandbox > /dev/null
+  end
+  docker exec -it sandbox /usr/bin/fish
+  echo "Stop sandbox container? (yes/no)"
+  read answer
+  if test "$answer" = "yes"
+    docker stop sandbox > /dev/null
+  end
 end
 
 function searchsploit
