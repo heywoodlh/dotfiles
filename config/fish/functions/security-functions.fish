@@ -266,6 +266,10 @@ function responder
   docker run -it --rm --net host booyaabes/kali-linux-full responder $argv
 end
 
+function sandbox
+  docker run --rm --net host --cap-add=NET_ADMIN --cap-add=NET_RAW --privileged heywoodlh/sandbox $argv
+end
+
 function searchsploit
   docker run --rm booyaabes/kali-linux-full searchsploit $argv
 end
