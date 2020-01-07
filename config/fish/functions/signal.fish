@@ -10,7 +10,7 @@ function signal
       --net host \
       --name signal-desktop \
       -e DISPLAY \
-      --cap-add SYS_ADM \
+      --cap-add SYS_ADMIN \
       -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
       -v signal_config:/home/signal/.config/Signal/ \
       -v $HOME/Downloads:/home/signal/Downloads \
