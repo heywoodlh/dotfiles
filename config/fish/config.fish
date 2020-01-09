@@ -45,6 +45,7 @@ end
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.config/fish/functions/security-functions.fish
+source ~/.config/fish/functions/vultr.fish
 
 set -x NIX_PATH "$HOME/.nix-defexpr/channels"
 set -x NIXPKGS_CONFIG "$HOME/.nix/config.nix"
