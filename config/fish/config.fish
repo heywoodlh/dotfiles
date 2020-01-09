@@ -75,3 +75,7 @@ else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
 else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
+
+if -f ~/.vultr-api
+  set VULTR_API_KEY (cat ~/.vultr-api)
+end
