@@ -101,7 +101,10 @@ end
 
 function gophish
   echo 'starting gophish at https://localhost:3333'
-  docker run --name gophish -d -e PHISH_LISTEN_URL=0.0.0.0:8080 --net host gophish/gophish
+  if docker volume ls | grep -q gophish_config
+    docker volume create gophish_config
+  end
+  docker run --name gophish -d -e PHISH_LISTEN_URL=0.0.0.0:8080 -v gophish_config:/opt/gophish --net host gophish/gophish
   if docker ps | grep -iq gophish
     echo 'gophish is running'
     echo 'default creds: admin:gophish'
@@ -329,7 +332,7 @@ function telnet
 end
 
 function theharvester
-  docker run --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full theharvester $argv
+  docker run --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full theHarvester $argv
 end
 
 function tshark
