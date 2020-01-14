@@ -23,6 +23,7 @@ function iceweasel
          --shm-size=4G \
          --group-add audio \
          -v /etc/localtime:/etc/localtime \
+         -v /etc/hosts:/etc/hosts \
          -u iceweasel \
          heywoodlh/iceweasel
     end
