@@ -173,6 +173,17 @@ function kali
   docker run -it --rm --net host --privileged -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority booyaabes/kali-linux-full /bin/bash $argv
 end
 
+function lokis-portal
+  if test -f (pwd)/creds.html
+    docker run -d --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:8080 heywoodlh/lokis-portal &&\
+    echo 'started lokis-portal at http://localhost:8080'
+  else
+    touch (pwd)/creds.html &&\
+    docker run -d --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:8080 heywoodlh/lokis-portal &&\
+    echo 'started lokis-portal at http://localhost:8080'
+  end
+end
+
 function masscan
   docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged heywoodlh/telnet masscan $argv
 end
