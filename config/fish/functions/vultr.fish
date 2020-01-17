@@ -13,7 +13,7 @@ function vultr-testing-create
       set serverOs (vultr-cli os list | grep 'Ubuntu 18.04' | awk '{print $1}')
       set scriptId (vultr-cli script list | grep 'ubuntu-dev-env' | awk '{print $1}')
       echo 'creating testing.heywoody.me'
-      vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me
+      vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me --ssh-keys 5bce2b36dc7f5
       printf "\n"
       echo 'waiting 10 seconds to check ip address of testing.heywoody.me'
       sleep 10
@@ -31,7 +31,7 @@ function vultr-testing-create
     set serverOs (vultr-cli os list | grep 'Ubuntu 18.04' | awk '{print $1}')
     set scriptId (vultr-cli script list | grep 'ubuntu-dev-env' | awk '{print $1}')
     echo 'creating testing.heywoody.me'
-    vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me
+    vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me --ssh-keys 5bce2b36dc7f5
     printf "\n"
     echo 'waiting 10 seconds to check ip address of testing.heywoody.me'
     sleep 10
