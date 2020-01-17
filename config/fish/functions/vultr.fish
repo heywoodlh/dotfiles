@@ -10,7 +10,7 @@ function vultr-testing-create
       echo 'collecting configuration information' 
       set planId (vultr-cli plans list | grep '5.00' | grep '1024 MB' | awk '{print $1}') 
       set serverRegion (vultr-cli regions list | grep 'Silicon Valley' | awk '{print $1}')
-      set serverOs (vultr-cli os list | grep 'Ubuntu 18.04' | awk '{print $1}')
+      set serverOs (vultr-cli os list | grep 'Ubuntu 19.10' | awk '{print $1}')
       set scriptId (vultr-cli script list | grep 'ubuntu-dev-env' | awk '{print $1}')
       echo 'creating testing.heywoody.me'
       vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me --ssh-keys 5bce2b36dc7f5
@@ -28,7 +28,7 @@ function vultr-testing-create
     echo 'collecting configuration information' 
     set planId (vultr-cli plans list | grep '5.00' | grep '1024 MB' | awk '{print $1}') 
     set serverRegion (vultr-cli regions list | grep 'Silicon Valley' | awk '{print $1}')
-    set serverOs (vultr-cli os list | grep 'Ubuntu 18.04' | awk '{print $1}')
+    set serverOs (vultr-cli os list | grep 'Ubuntu 19.10' | awk '{print $1}')
     set scriptId (vultr-cli script list | grep 'ubuntu-dev-env' | awk '{print $1}')
     echo 'creating testing.heywoody.me'
     vultr-cli server create --region "$serverRegion" --plan "$planId" --os "$serverOs" --script-id "$scriptId" --host testing.heywoody.me --label testing.heywoody.me --ssh-keys 5bce2b36dc7f5
