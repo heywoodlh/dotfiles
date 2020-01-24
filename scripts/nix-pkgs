@@ -1,11 +1,6 @@
 ansible
 bitwarden-cli
-clamav
 curl
-dnscrypt-proxy
-docker
-docker-compose
-docker-machine
 ffmpeg
 fish
 fzf
@@ -23,15 +18,12 @@ pstree
 pwgen
 python3.8 
 python3.8-pip
-qbittorrent
 screen
 sshfs-fuse
 tmux
 tor
 traceroute
 vim
-virtualbox
-virtualbox-modules
 vlc
 weechat
 wget

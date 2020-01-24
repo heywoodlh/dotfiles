@@ -4,7 +4,7 @@ if ! command -v peru
 then
 	if command -v pip3
 	then
-		sudo pip3 install peru
+		pip3 install --user peru
 	else
 		echo 'Please install python3-pip! Exiting.'
 		exit 1
@@ -13,7 +13,7 @@ fi
 
 workingDir=$(pwd)
 cd ~/.dotfiles &&\
-	peru sync
+	python3 -m peru sync
 
 cd $workingDir
 

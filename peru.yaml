@@ -17,7 +17,6 @@ imports:
   vim-syntastic: vim/bundle/syntastic
 
   bw-scripts: bw-scripts
-  mojave-gtk: /tmp/mojave-gtk
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
@@ -70,5 +69,3 @@ git module vim-syntastic:
 git module bw-scripts:
     url: https://github.com/heywoodlh/bw-scripts
 
-git module mojave-gtk:
-    url: https://github.com/vinceliuice/Mojave-gtk-theme
