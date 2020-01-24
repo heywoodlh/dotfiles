@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c tor-browser-docker
+Exec=/home/heywoodlh/.nix-profile/bin/fish -c tor-browser
 Terminal=false
 Name=Tor Browser
 Categories=Network;WebBrowser;Security;
