@@ -1,17 +1,9 @@
-wireguard
-wireguard-tools
 sxhkd
-network-manager-applet
-bitwarden
-veracrypt
-vagrant
 polybar
 xclip
-wavebox
 xterm
 xss-lock-git
 feh
-albert
 scrot
 siji
 i3lock-fancy-unstable
