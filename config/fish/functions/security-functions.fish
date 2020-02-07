@@ -265,7 +265,7 @@ function nikto
 end
 
 function nmap
-  docker run --rm --net host --privileged booyaabes/kali-linux-full nmap $argv
+  docker run --rm --net host --privileged heywoodlh/telnet nmap $argv
 end
 
 function padbuster
