@@ -162,7 +162,7 @@ passthrough < ctrl + cmd - p ; default
 ctrl + cmd - s : /Users/heywoodlh/.bw-scripts/slab.sh
 ctrl + cmd - 2 : /Users/heywoodlh/.bw-scripts/2fa.sh
 ctrl + cmd - u : /Users/heywoodlh/.bw-scripts/unlock.sh
-ctrl + alt - t : /Applications/kitty.app/Contents/MacOS/kitty
+ctrl + alt - t : open -a kitty
 
 cmd - l : /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 
