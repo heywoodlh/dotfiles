@@ -19,9 +19,8 @@ function iceweasel
          -v $HOME/Documents:/home/iceweasel/Documents \
          -v $HOME/Desktop:/home/iceweasel/Desktop \
          --device /dev/snd \
-         --device /dev/dri \
          --shm-size=4G \
-         --group-add audio \
+         --ipc=host \
          -v /etc/localtime:/etc/localtime \
          -v /etc/hosts:/etc/hosts \
          -u iceweasel \
