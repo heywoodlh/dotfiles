@@ -367,6 +367,7 @@ function vol.py
     docker run -it --rm -v ~/.volatilityrc:/root/.volatilityrc -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility --conf-file /root/.volatilityrc $argv
   else
     echo 'remember to set needed volatility conf in ~/.volatilityrc!'
+    echo 'paths are relative to (pwd):/data'
     docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility $argv
   end
 end
