@@ -362,8 +362,13 @@ function volafox
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volafox $argv
 end
 
-function volatility
-  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volatility $argv
+function vol.py
+  if test -f ~/.volatilityrc
+    docker run -it --rm -v ~/.volatilityrc:/root/.volatilityrc -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility --conf-file /root/.volatilityrc $argv
+  else
+    echo 'remember to set needed volatility conf in ~/.volatilityrc!'
+    docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility $argv
+  end
 end
 
 function vulnscan
