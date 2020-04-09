@@ -362,8 +362,15 @@ function volafox
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volafox $argv
 end
 
-function volatility
-  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full volatility $argv
+function vol.py
+  if test -f ~/.volatilityrc
+    docker run -it --rm -v ~/.volatilityrc:/root/.volatilityrc -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility --conf-file /root/.volatilityrc $argv
+  else
+    echo 'Remember to set needed volatility conf in ~/.volatilityrc. Creating new config file now. Please edit it.'
+    echo 'Paths are relative to (pwd):/data'
+    printf "[DEFAULT]\nPROFILE=Win7SP0x86\nLOCATION=file:///data/memory.lime\nPLUGINS=/data\n" > ~/.volatilityrc
+    docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/volatility $argv
+  end
 end
 
 function vulnscan
