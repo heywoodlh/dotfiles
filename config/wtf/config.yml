@@ -26,3 +26,62 @@ wtf:
         height: 1
         width: 1
       refreshInterval: 150
+    gcal:
+      colors:
+        title: "blue"
+        eventTime: "lightblue"
+        description: "yellow"
+        highlights:
+        - ['1on1|1\/11', 'green']
+        - ['apple|google|aws', 'blue']
+        - ['interview|meet', 'magenta']
+        - ['lunch', 'yellow']
+        past: "gray"
+      calendarReadLevel: "reader"
+      conflictIcon: "🚨"
+      currentIcon: "💥"
+      displayResponseStatus: true
+      email: "email@example.com"
+      enabled: true
+      eventCount: 15
+      hourFormat: "24"
+      multiCalendar: true
+      position:
+        top: 1
+        left: 0
+        height: 2
+        width: 1
+      refreshInterval: 300
+      secretFile: "/home/wtf/.config/wtf/secrets/credentials.json"
+      showDeclined: true
+      timezone: "America/Denver"
+      withLocation: true
+    weather:
+      apiKey: 
+      # From http://bulk.openweathermap.org/sample/city.list.json.gz
+      cityids:
+      - 5785116
+      - 5856194
+      - 5358705
+      colors:
+        current: "lightblue"
+      enabled: true
+      language: "EN"
+      position:
+        top: 1
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 900
+      tempUnit: "F"
+    feedreader:
+      enabled: true
+      feeds:
+      - https://hnrss.org/frontpage
+      feedLimit: 10
+      position:
+        top: 2
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 14400
