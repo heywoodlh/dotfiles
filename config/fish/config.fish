@@ -42,6 +42,11 @@ if test -d /usr/X11R6/bin
   end
 end
 
+if test -d ~/.local/bin
+  if not echo "$PATH" | grep -q '~/.local/bin'
+    set -gx PATH ~/.local/bin $PATH
+  end
+end
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.config/fish/functions/security-functions.fish
@@ -77,6 +82,10 @@ else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
 
-if test -f ~/.vultr-api
-  set VULTR_API_KEY (cat ~/.vultr-api)
+if pass ls | grep -q vultr_api
+  set VULTR_API_KEY (pass vultr_api)
 end
+
+if pass ls | grep -q openweathermap_api
+  set WTF_OWM_API_KEY (pass openweathermap_api)
+end 
