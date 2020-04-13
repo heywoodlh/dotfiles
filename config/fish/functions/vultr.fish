@@ -1,8 +1,7 @@
-if pass ls | grep -q vultr_api
-  set VULTR_API_KEY (pass vultr_api)
-end
-
 function vultr-testing-create
+  if pass ls | grep -q vultr_api
+    set VULTR_API_KEY (pass vultr_api)
+  end
   if vultr-cli server list | grep -q 'testing.heywoody.me'
     echo 'testing.heywoody.me already exists, destroy it? (yes/no)'
     read response
@@ -49,6 +48,9 @@ function vultr-testing-create
 end
 
 function vultr-testing-destroy
+  if pass ls | grep -q vultr_api
+    set VULTR_API_KEY (pass vultr_api)
+  end
   if vultr-cli server list | grep -q 'testing.heywoody.me'
     echo 'destroy testing.heywoody.me? (yes/no)'
     read response
