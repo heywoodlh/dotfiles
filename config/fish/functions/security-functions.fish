@@ -355,7 +355,7 @@ function unfurl
 end
 
 function urlscan
-  docker run --rm -i -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest urlscan $argv
+  docker run --rm -i -v (pwd):/tmp -w /tmp -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest $argv
 end
 
 function volafox
