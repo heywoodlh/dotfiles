@@ -81,7 +81,3 @@ else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
 else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
-
-if pass ls | grep -q openweathermap_api
-  set WTF_OWM_API_KEY (pass openweathermap_api)
-end 
