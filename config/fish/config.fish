@@ -82,10 +82,6 @@ else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
 
-if pass ls | grep -q vultr_api
-  set VULTR_API_KEY (pass vultr_api)
-end
-
 if pass ls | grep -q openweathermap_api
   set WTF_OWM_API_KEY (pass openweathermap_api)
 end 
