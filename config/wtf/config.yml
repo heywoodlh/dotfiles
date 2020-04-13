@@ -1,0 +1,28 @@
+wtf:
+  mods:
+    todo:
+      checkedIcon: "X"
+      colors:
+        checked: gray
+        highlight:
+          fore: "black"
+          back: "white"
+      filename: "tasks/todo.yml"
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 150
+    ipinfo:
+      colors:
+        name: white
+        value: blue
+      enabled: true
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 150
