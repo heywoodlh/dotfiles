@@ -1,13 +1,11 @@
 zgen.zsh
 vim/*
-zsh/*
-config/*
 .peru
 !config/termite*
 !config/redshift.conf
 config/fish/*
-!config/fish/functions
+!config/fish/functions/*
 !config/fish/config.fish
 config/wtf/secrets/*
 config/wtf/files/*
-!config/wtf
+config/aerc/accounts.conf
