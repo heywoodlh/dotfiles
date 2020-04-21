@@ -1,4 +1,4 @@
-function pass
+function gpg
   mkdir -p ~/.password-store
   mkdir -p ~/.gnupg
   docker run \
@@ -8,5 +8,5 @@ function pass
     -v (pwd):/tmp/pass \
     -v ~/.password-store:/home/pass/.password-store \
     -v ~/.gnupg:/home/pass/.gnupg \
-    heywoodlh/pass pass $argv
+    heywoodlh/pass gpg $argv
 end
