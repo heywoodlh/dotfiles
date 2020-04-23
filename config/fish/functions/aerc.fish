@@ -1,11 +1,17 @@
 function aerc
+  set EDITOR /usr/bin/vim
+
   mkdir -p ~/.config/aerc/scripts
   mkdir -p ~/.config/aerc/filters
   mkdir -p ~/.config/aerc/templates
   mkdir -p ~/.config/khard/contacts
   mkdir -p ~/.gnupg
   mkdir -p ~/.password-store
-  set EDITOR /usr/bin/vim
+  mkdir -p ~/Documents
+  mkdir -p ~/Desktop
+  mkdir -p ~/Pictures
+  mkdir -p ~/Downloads
+
   
   docker run -it --rm --name aerc \
     -e EDITOR=$EDITOR \
@@ -15,6 +21,10 @@ function aerc
     -v ~/.config/khard:/home/aerc/.config/khard \
     -v ~/.password-store:/home/aerc/.password-store \
     -v ~/.gnupg:/home/aerc/.gnupg \
+    -v ~/Downloads:/home/aerc/Downloads \
+    -v ~/Documents:/home/aerc/Documents \
+    -v ~/Pictures:/home/aerc/Pictures \
+    -v ~/Desktop:/home/aerc/Desktop \
     -v $HOME/.config/aerc:/home/aerc/.config/aerc \
     -e TZ=America/Denver \
     --network host \
