@@ -1,6 +1,7 @@
 function aerc
   mkdir -p ~/.config/aerc/scripts
   mkdir -p ~/.config/aerc/filters
+  mkdir -p ~/.config/aerc/templates
   mkdir -p ~/.config/khard/contacts
   mkdir -p ~/.gnupg
   mkdir -p ~/.password-store
@@ -9,6 +10,7 @@ function aerc
   docker run -it --rm --name aerc \
     -e EDITOR=$EDITOR \
     -v ~/.config/aerc/filters:/usr/share/aerc/filters \
+    -v ~/.config/aerc/templates:/home/aerc/.config/aerc/templates \
     -v ~/.config/aerc/scripts:/home/aerc/.config/aerc/scripts \
     -v ~/.config/khard:/home/aerc/.config/khard \
     -v ~/.password-store:/home/aerc/.password-store \
