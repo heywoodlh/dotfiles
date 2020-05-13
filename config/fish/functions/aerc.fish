@@ -25,6 +25,7 @@ function aerc
     -v ~/Documents:/home/aerc/Documents \
     -v ~/Pictures:/home/aerc/Pictures \
     -v ~/Desktop:/home/aerc/Desktop \
+    -v /etc/hosts:/etc/hosts \
     -v $HOME/.config/aerc:/home/aerc/.config/aerc \
     -e TZ=America/Denver \
     --network host \
