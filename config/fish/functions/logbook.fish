@@ -9,7 +9,7 @@ function logbook
   mkdir -p "$target/$year/$month"
   set file "$target/$year/$month/$day.txt"
   
-  printf "$time\n" >> $file
+  printf "[$time]\n" >> $file
 
   vim + $file
 
