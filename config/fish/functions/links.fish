@@ -1,3 +1,3 @@
 function links
-  docker run -it --rm heywoodlh/links $argv
+  docker run -v ~/Downloads:/home/links/Downloads -it --rm heywoodlh/links $argv
 end
