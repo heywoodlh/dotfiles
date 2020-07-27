@@ -355,7 +355,7 @@ function unfurl
 end
 
 function urlscan
-  if string match -q -- "scan" $argv
+  if string match -q -- "scan" $argv; or string match -q -- "retrieve" $argv
     if [ -e ~/.password-store/urlscan.io/api.gpg ]
       set api (pass urlscan.io/api)
       set argv $argv --api $api
