@@ -355,6 +355,12 @@ function unfurl
 end
 
 function urlscan
+  if string match -q -- "scan" $argv
+    if [ -e ~/.password-store/urlscan.io/api.gpg ]
+      set api (pass urlscan.io/api)
+      set argv $argv --api $api
+    end
+  end
   docker run --rm -i -v (pwd):/tmp -w /tmp -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest $argv
 end
 
