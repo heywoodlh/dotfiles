@@ -4,6 +4,7 @@ imports:
 
   vim-airline: vim/bundle/airline
   vim-airline-themes: vim/bundle/airline-themes
+  vim-auto-pairs: vim/bundle/auto-pairs
   vim-base16: vim/bundle/base16
   vim-colorizer: vim/bundle/colorizer
   vim-fish: vim
@@ -11,6 +12,7 @@ imports:
   vim-go: vim/bundle/go
   vim-jedi: vim/bundle/jedi
   vim-markdown: vim/bundle/markdown
+  vim-nerdtree: vim/bundle/nerdtree
   vim-pathogen: vim/
   vim-pydocstring: vim/bundle/pydocstring
   vim-python-mode: vim/bundle/python-mode
@@ -35,6 +37,9 @@ git module vim-airline:
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
 
+git module vim-auto-pairs:
+    url: https://github.com/jiangmiao/auto-pairs
+
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
 
@@ -55,6 +60,9 @@ git module vim-go:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
+
+git module vim-nerdtree:
+    url: https://github.com/preservim/nerdtree
 
 git module vim-jedi:
     url: https://github.com/davidhalter/jedi-vim
