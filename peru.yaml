@@ -6,6 +6,7 @@ imports:
   vim-airline-themes: vim/bundle/airline-themes
   vim-auto-pairs: vim/bundle/auto-pairs
   vim-base16: vim/bundle/base16
+  vim-coc: vim/bundle/coc
   vim-colorizer: vim/bundle/colorizer
   vim-fish: vim
   vim-gitgutter: vim/bundle/gitgutter
@@ -27,73 +28,101 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
+    rev: ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1
 
 git module fish-pure-prompt:
     url: https://github.com/heywoodlh/pure.fish
+    rev: 1599fb920ddb8e6375c29f8801126f89230d4d44
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
+    rev: 2a027e992d44e47ea3f176692fe948d3145eab54
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
+    rev: 04fa4fc40f21d9490954213c1ee06c7fdea66a6d
 
 git module vim-auto-pairs:
     url: https://github.com/jiangmiao/auto-pairs
+    rev: 39f06b873a8449af8ff6a3eee716d3da14d63a76
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
+    rev: 6191622d5806d4448fa2285047936bdcee57a098
+
+git module vim-coc:
+    url: https://github.com/neoclide/coc.nvim
+    rev: 0ff42027ffd0c41aca4bac1b7e9a9c898a14e9ff
 
 git module vim-colorizer:
     url: https://github.com/lilydjwg/colorizer
+    rev: 1ddc68adbf45331158c61507a55fcc918bb61654
 
 git module vim-fish:
     url: https://github.com/aliva/vim-fish
+    rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
+    rev: 9b6a24b13166feee0cc83e2cc40e2ddb31bcc2a1
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
+    rev: 62ff20f9797fcf11f132f8aab4e882807d0e2593
 
 git module vim-go:
     url: https://github.com/fatih/vim-go
+    rev: 991197f379d3bf5ca87a69e1dcbb40595fcd15e1
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
+    rev: 8e5d86f7b85234d3d1b4207dceebc43a768ed5d4
 
 git module vim-nerdtree:
     url: https://github.com/preservim/nerdtree
+    rev: 4a32dd0be35621dc8d4b73836f58434ff3e73124
 
 git module vim-jedi:
     url: https://github.com/davidhalter/jedi-vim
+    rev: a17b0333031bd3652ad4c6169caaed05ffb7c49d
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
+    rev: c6bc42404597c718e4a032a98e21e63321cbb05a
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
+    rev: 9d954fc15c1b06b2b9cb7dff713ba029da7df226
 
 git module vim-python-mode:
-    url: https://github.com/klen/python-mode
+    url: https://github.com/python-mode/python-mode
+    rev: f94b0d7b21714f950f5878b430fbfde21c3b7ad9
 
 git module vim-sensible:
     url: https://github.com/tpope/vim-sensible
+    rev: 2d9f34c09f548ed4df213389caa2882bfe56db58
 
 git module vim-sudoedit:
     url: https://github.com/chrisbra/SudoEdit.vim
+    rev: e203eada5b563e9134ce2aae26b09edae0904fd7
 
 git module vim-sneak:
     url: https://github.com/justinmk/vim-sneak
+    rev: afe94543bb3bb95ef9ae2a58eebcbc17d69eb304
 
 git module vim-supertab:
     url: https://github.com/ervandew/supertab
+    rev: 40fe711e088e2ab346738233dd5adbb1be355172
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
+    rev: 83837a6e86ca8f8795a68dff0242d79065bd170d
 
 git module vim-which-key:
     url: https://github.com/liuchengxu/vim-which-key
+    rev: 4e5bd491badecfcd3ecbe0f813d3b31625a8eb4f
 
 git module bw-scripts:
     url: https://github.com/heywoodlh/bw-scripts
+    rev: 88e51d5accedd2150cf2c95caa1755a943e99600
 
