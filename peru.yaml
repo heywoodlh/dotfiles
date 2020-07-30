@@ -19,7 +19,6 @@ imports:
   vim-sneak: vim/bundle/sneak
   vim-sudoedit: vim/bundle/sudoedit
   vim-supertab: vim/bundle/supertab
-  vim-syntastic: vim/bundle/syntastic
   vim-which-key: vim/bundle/which-key
 
   bw-scripts: bw-scripts
@@ -83,9 +82,6 @@ git module vim-sneak:
 
 git module vim-supertab:
     url: https://github.com/ervandew/supertab
-
-git module vim-syntastic:
-    url: https://github.com/scrooloose/syntastic
 
 git module vim-which-key:
     url: https://github.com/liuchengxu/vim-which-key
