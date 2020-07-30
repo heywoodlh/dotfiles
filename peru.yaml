@@ -16,7 +16,6 @@ imports:
   vim-nerdtree: vim/bundle/nerdtree
   vim-pathogen: vim/
   vim-pydocstring: vim/bundle/pydocstring
-  vim-python-mode: vim/bundle/python-mode
   vim-sensible: vim/bundle/sensible
   vim-sneak: vim/bundle/sneak
   vim-sudoedit: vim/bundle/sudoedit
@@ -76,9 +75,6 @@ git module vim-pathogen:
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-
-git module vim-python-mode:
-    url: https://github.com/python-mode/python-mode
 
 git module vim-sensible:
     url: https://github.com/tpope/vim-sensible
