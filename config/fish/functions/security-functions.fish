@@ -119,7 +119,7 @@ end
 
 function gscript
   mkdir -p ~/Documents/gscript
-  docker run -it -v /tmp:/tmp -v ~/Documents/gscript:/root/Documents/gscript gen0cide/gscript:v1 $argv
+  docker run -it -v /tmp:/tmp -v ~/Documents/gscript:/root/gscript -w /root/gscript gen0cide/gscript:v1 $argv
 end
 
 function h8mail
