@@ -118,8 +118,7 @@ function gron
 end
 
 function gscript
-  mkdir -p ~/Documents/gscript
-  docker run -it -v /tmp:/tmp -v ~/Documents/gscript:/root/gscript -w /root/gscript gen0cide/gscript:v1 $argv
+  docker run -it --rm -v /tmp:/tmp -v (pwd):/root/gscript -w /root/gscript gen0cide/gscript:v1 /root/go/bin/gscript $argv
 end
 
 function h8mail
@@ -217,8 +216,7 @@ end
 function merlin
   if test (command -v screen)
     docker pull heywoodlh/merlin
-    screen -S merlin-server -d -m docker run --name merlin --restart unless-stopped --net host -it heywoodlh/merlin /usr/bin/merlinserver -i 0.0.0.0 $argv
-    echo "Attach to merlin server: screen -r merlin-server"
+    screen -S merlin-server -d -m docker run --name merlin --restart unless-stopped -net host -it heywoodlh/merlin /usr/bin/merlinserver -i 0.0.0.0 $argv && echo "Attach to merlin server: screen -r merlin-server"
   else
     echo "Please install screen before running merlin function"
   end
