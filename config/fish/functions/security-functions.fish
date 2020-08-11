@@ -227,11 +227,13 @@ function mitmproxy
 end
 
 function msfconsole
-  docker run -it --rm --net host -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data booyaabes/kali-linux-full msfconsole $argv
+  mkdir -p ~/.docker/metasploit/
+  docker run -it --rm --net host -v ~/.docker/metasploit/:/home/metasploit/.msf4 -w /home/metasploit/session -v (pwd):/home/metasploit/session heywoodlh/metasploit msfconsole $argv
 end
 
 function msfvenom
-  docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full msfvenom $argv
+  mkdir -p ~/.docker/metasploit/
+  docker run -it --rm -v ~/.docker/metasploit/:/home/metasploit/.msf4 -w /home/metasploit/session -v (pwd):/home/metasploit/session heywoodlh/metasploit msfvenom $argv
 end
 
 function nc
