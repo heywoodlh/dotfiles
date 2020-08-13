@@ -1,5 +1,4 @@
 tap "beeftornado/rmtree"
-tap "browsh-org/browsh"
 tap "crisidev/chunkwm"
 tap "github/gh"
 tap "homebrew/bundle"
@@ -17,7 +16,6 @@ cask "osxfuse"
 brew "librsvg"
 brew "ansible"
 brew "bitwarden-cli"
-brew "cadaver"
 brew "choose-gui"
 brew "csshx"
 brew "docker", link: false
