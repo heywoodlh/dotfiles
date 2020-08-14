@@ -240,6 +240,9 @@ function nc
   docker run --rm -i --net host heywoodlh/telnet nc $argv
 end
 
+function netscan
+  docker run -it --rm --net host heywoodlh/red /opt/red-scripts/netscan.sh $argv
+end
 function ndiff
   docker run -it --rm -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full ndiff $argv
 end
