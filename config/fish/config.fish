@@ -81,6 +81,4 @@ end
 
 set EDITOR /usr/bin/vim
 
-set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
-
 builtin history clear
