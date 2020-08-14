@@ -1,7 +1,5 @@
 set fish_greeting ''
 
-eval (python3 -m virtualfish compat_aliases)
-
 if test -f ~/.bw_session
     set BW_SESSION (cat ~/.bw_session)
 else
@@ -16,7 +14,7 @@ if uname -a | grep -iq 'Linux'
   set -Ux LS_COLORS 'di=32:ln=35:so=32:pi=37:ex=35:bd=34;46:cd=37;43:su=34;46:sg=30;46:tw=30;45:ow=36;45'
 end
 
-export GOPATH=$HOME/go
+set GOPATH $HOME/go
 
 if test -d ~/.nix-profile/bin
   if not echo "$PATH" | grep -q '~/.nix-profile/bin'
@@ -48,7 +46,6 @@ if test -d ~/.local/bin
   end
 end
 
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.config/fish/functions/security-functions.fish
 source ~/.config/fish/functions/vultr.fish
 
@@ -59,9 +56,9 @@ set -x NIX_LINK "$HOME/.nix-profile"
 set -x NIX_USER_PROFILE_DIR "/nix/var/nix/profiles/per-user/$USER"
 set -x NIX_IGNORE_SYMLINK_STORE 1
 
-if uname -a | grep -iq 'Linux'
-  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$HOME/.local/share/:/usr/share:$XDG_DATA_DIRS"
-end
+#if uname -a | grep -iq 'Linux'
+#  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$HOME/.local/share/:/usr/share:$XDG_DATA_DIRS"
+#end
 
 if test -f /etc/ssl/certs/ca-certificates.crt
   set -x NIX_SSL_CERT_FILE "/etc/ssl/certs/ca-certificates.crt"
@@ -81,3 +78,9 @@ else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
 else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
+
+set EDITOR /usr/bin/vim
+
+set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
+
+builtin history clear
