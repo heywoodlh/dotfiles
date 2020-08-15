@@ -114,7 +114,7 @@ function gophish
 end
 
 function gron
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "gron $argv"
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest gron $argv
 end
 
 function gscript
@@ -146,7 +146,7 @@ function httping
 end
 
 function httprobe
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | httprobe $argv"
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest cat | httprobe $argv
 end
 
 function hydra
@@ -354,7 +354,7 @@ function tshark
 end
 
 function unfurl
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | unfurl $argv"
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest cat | unfurl $argv
 end
 
 function urlscan
@@ -383,7 +383,11 @@ function vol.py
 end
 
 function vt
-  docker run -it --rm heywoodlh/vt-cli $argv
+  if [ -e ~/.password-store/virustotal/api.gpg ]
+    set api (pass virustotal/api)
+    set argv $argv --apikey $api
+  end
+  docker run -it -w /data -v (pwd):/data --rm heywoodlh/vt-cli $argv
 end
 
 function vulnscan
