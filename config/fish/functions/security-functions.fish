@@ -382,6 +382,10 @@ function vol.py
   end
 end
 
+function vt
+  docker run -it --rm heywoodlh/vt-cli $argv
+end
+
 function vulnscan
   docker run --rm --net host --privileged booyaabes/kali-linux-full nmap -sV --script=vulscan/vulscan.nse $argv
 end
