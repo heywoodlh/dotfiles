@@ -87,7 +87,7 @@ function geoiplookup
 end
 
 function gf
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | gf $argv"
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest gf $argv
 end
 
 function gobuster
@@ -146,7 +146,7 @@ function httping
 end
 
 function httprobe
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest cat | httprobe $argv
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest httprobe $argv
 end
 
 function hydra
@@ -392,7 +392,7 @@ function tshark
 end
 
 function unfurl
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest cat | unfurl $argv
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest unfurl $argv
 end
 
 function urlscan
@@ -437,7 +437,7 @@ function wash
 end
 
 function waybackurls
-  docker run --rm -i heywoodlh/tomnomnom-tools:latest bash -c "cat | waybackurls $argv"
+  docker run --rm -i heywoodlh/tomnomnom-tools:latest waybackurls $argv
 end
 
 function webscarab
