@@ -168,6 +168,12 @@ function openvas
   end
 end
 
+if uname -a | grep -iq linux
+  function jackit
+    docker run --rm -it --name jackit --privileged -v (pwd):/tmp/jackit -w /tmp/jackit -v /dev/bus/usb:/dev/bus/usb heywoodlh/jackit jackit $argv
+  end
+end
+
 function kali
   docker run -it --rm --net host --privileged -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority booyaabes/kali-linux-full /bin/bash $argv
 end

@@ -47,7 +47,6 @@ if test -d ~/.local/bin
 end
 
 source ~/.config/fish/functions/security-functions.fish
-source ~/.config/fish/functions/vultr.fish
 
 set -x NIX_PATH "$HOME/.nix-defexpr/channels"
 set -x NIXPKGS_CONFIG "$HOME/.nix/config.nix"
@@ -81,4 +80,8 @@ end
 
 set EDITOR /usr/bin/vim
 
+set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
+
 builtin history clear
+
+starship init fish | source
