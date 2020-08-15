@@ -303,12 +303,38 @@ function sandbox
   end
 end
 
+function scan-site
+  for site in $argv
+    echo "queuing scan for $site"
+    set uuid (urlscan scan --url $site | grep "uuid" | awk '{print $2}' | tr -d \",)
+
+    set loop "True"
+    
+    echo "waiting for scan results"
+    while test $loop = "True"
+      set output (urlscan retrieve --uuid $uuid --summary 2> /dev/null)
+      if test $status -eq 0
+        urlscan retrieve --uuid $uuid --summary
+        set loop "False"
+      end
+      sleep 10
+    end
+  end
+end
+
 function searchsploit
   docker run --rm booyaabes/kali-linux-full searchsploit $argv
 end
 
 function setoolkit
   docker run -it --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full setoolkit $argv
+end
+
+function shodan
+  if test ! -e ~/.shodan/api_key
+    mkdir -p ~/.shodan/
+  end
+  docker run --rm -it -v ~/.shodan:/home/shodan/.shodan heywoodlh/shodan-cli $argv
 end
 
 function smb-server
@@ -353,6 +379,12 @@ end
 
 function theharvester
   docker run --rm -v (pwd):/data -v /tmp:/tmp booyaabes/kali-linux-full theHarvester $argv
+end
+
+function traceroute
+  docker run --rm -it \
+    --net host \
+    jess/traceroute "$argv"
 end
 
 function tshark
