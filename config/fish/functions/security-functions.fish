@@ -190,7 +190,7 @@ function lokis-portal
 end
 
 function masscan
-  docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged heywoodlh/telnet masscan $argv
+  docker run --rm --net host -w /data -v (pwd):/data -v /tmp:/tmp --privileged heywoodlh/telnet masscan $argv
 end
 
 function medusa
