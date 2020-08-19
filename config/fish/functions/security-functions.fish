@@ -149,6 +149,15 @@ function httprobe
   docker run --rm -i heywoodlh/tomnomnom-tools:latest httprobe $argv
 end
 
+function httrack
+  if [ ! -n $argv[1] ]
+    echo "usage: httrack https://google.com"
+  else
+    set uri $argv[1]
+    docker run --rm -it --net host -v (pwd):/app -e HTTRACK_URI=$uri ralfbs/httrack:latest
+  end
+end
+
 function hydra
   docker run --rm --net host -v (pwd):/data -v /tmp:/tmp --privileged booyaabes/kali-linux-full hydra $argv
 end
@@ -182,12 +191,12 @@ function lokis-portal
   if test -f (pwd)/creds.html
     echo 'starting lokis-portal at http://localhost:8080' &&\
     sleep 3 &&\
-    docker run -it --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
+    docker run -it --rm --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
   else
     touch (pwd)/creds.html &&\
     echo 'starting lokis-portal at http://localhost:8080' &&\
     sleep 3 &&\
-    docker run -it --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
+    docker run -it --rm --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
   end
 end
 
