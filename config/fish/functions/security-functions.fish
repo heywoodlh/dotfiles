@@ -180,12 +180,14 @@ end
 
 function lokis-portal
   if test -f (pwd)/creds.html
-    docker run -d --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal &&\
-    echo 'started lokis-portal at http://localhost:8080'
+    echo 'starting lokis-portal at http://localhost:8080' &&\
+    sleep 3 &&\
+    docker run -it --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
   else
     touch (pwd)/creds.html &&\
-    docker run -d --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal &&\
-    echo 'started lokis-portal at http://localhost:8080'
+    echo 'starting lokis-portal at http://localhost:8080' &&\
+    sleep 3 &&\
+    docker run -it --name lokis-portal -v (pwd)/creds.html:/var/www/html/creds.html -p 8080:80 --sysctl net.ipv4.ip_unprivileged_port_start=0 heywoodlh/lokis-portal
   end
 end
 
