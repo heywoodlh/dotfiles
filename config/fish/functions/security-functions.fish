@@ -388,8 +388,12 @@ end
 function tsunami
   mkdir -p tsunami
   if count $argv > /dev/null
-    docker run -v (pwd):/data -it --rm heywoodlh/tsunami $argv --scan-results-local-output-filename /data/tsunami/results.json --scan-results-local-output-format JSON > /dev/null &&\
-    echo "writing results to ./tsunami/results.json"
+    if echo $argv | grep -q '\-\-help'
+      docker run -v (pwd):/data -it --rm heywoodlh/tsunami --help | grep -iv "INFO" | grep -iv "com.google" | grep -E '\-\-|Options' | grep -iv 'Unknown option'
+    else
+      docker run -v (pwd):/data -it --rm heywoodlh/tsunami $argv --scan-results-local-output-filename /data/tsunami/results.json --scan-results-local-output-format JSON > /dev/null &&\
+      echo "writing results to ./tsunami/results.json"
+    end
   else
     echo "usage: tsunami [ --ip-v4-target 192.168.1.1, --hostname-target example.com ... ]"
   end
