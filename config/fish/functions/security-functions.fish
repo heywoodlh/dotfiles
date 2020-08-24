@@ -395,7 +395,7 @@ function tsunami
       echo "writing results to ./tsunami/results.json"
     end
   else
-    echo "usage: tsunami [ --ip-v4-target 192.168.1.1, --hostname-target example.com ... ]"
+    echo "usage: tsunami [ --help, --ip-v4-target 192.168.1.1, --hostname-target example.com ... ]"
   end
 end
 
