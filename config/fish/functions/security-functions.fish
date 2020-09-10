@@ -56,13 +56,7 @@ function dnswalk
 end
 
 function evilginx
-  mkdir -p ~/Documents/evilginx
-  if docker ps -a | grep -q evilginx
-    docker exec -it evilginx evilginx
-  else
-    docker pull heywoodlh/evilginx2
-    docker run --name evilginx -it --rm -p 53:53 -p 80:80 -p 443:443 heywoodlh/evilginx2 $argv
-  end
+  docker run --name evilginx -it --rm -p 53:53 -p 80:80 -p 443:443 heywoodlh/evilginx2 $argv
 end
 
 function fsociety
