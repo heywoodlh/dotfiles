@@ -45,5 +45,4 @@ for file in $files; do
 	ln -s $dir/$file ~/.$file
 done
 
-mkdir -p "$HOME"/Pictures &&\
-       	ln -s "$HOME"/.dotfiles/wallpapers "$HOME"/Pictures/wallpapers
+mkdir -p ~/.local/bin/ && ln -s $dir/scripts/ ~/.local/bin/scripts
