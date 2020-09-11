@@ -21,7 +21,7 @@ dir=~/.dotfiles
 olddir=~/.dotfiles.old
 
 # List of files/folders to move to homedir
-files="vim gitconfig xinitrc tmux.conf bw-scripts nix vimrc"
+files="vim gitconfig xinitrc tmux.conf bw-scripts nix vimrc screenrc"
 
 # Create .dotfiles_old in homedir
 mkdir -p $olddir
