@@ -69,9 +69,5 @@ do
 	trizen -S "$PACKAGE" --noconfirm
 done<pkgs
 
-## Docker setup
-sudo systemctl enable --now docker.service &&\
-	sudo usermod -aG docker "$USER"
-
 ## sxhkd setup
-systemctl enable --user --now sxhkd.service
+#systemctl enable --user --now sxhkd.service

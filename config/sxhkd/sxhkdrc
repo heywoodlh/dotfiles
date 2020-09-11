@@ -1,20 +1,28 @@
 #!/usr/bin/env sh
 #
-# bspwm hotkeys
+# i3 hotkeys
 #
 
-#
+super + space 
+    albert show
+
 # wm independent hotkeys
 #
 
+super + shift + s
+    screenshot
+
 control + super + s
-    ~/.nix-profile/bin/fish -c ~/.bw-scripts/slab.sh
-
-control + super + 2
-    ~/.nix-profile/bin/fish -c ~/.bw-scripts/2fa.sh
-
-control + super + u
-    ~/.nix-profile/bin/fish -c ~/.bw-scripts/unlock.sh
+    bwmenu 
 
 control + alt + t
-    /usr/bin/kitty
+    kitty
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    xbacklight -{inc,dec} 5%

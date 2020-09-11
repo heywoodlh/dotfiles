@@ -21,8 +21,6 @@ imports:
   vim-supertab: vim/bundle/supertab
   vim-which-key: vim/bundle/which-key
 
-  bw-scripts: bw-scripts
-
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
 
@@ -86,6 +84,4 @@ git module vim-supertab:
 git module vim-which-key:
     url: https://github.com/liuchengxu/vim-which-key
 
-git module bw-scripts:
-    url: https://github.com/heywoodlh/bw-scripts
 
