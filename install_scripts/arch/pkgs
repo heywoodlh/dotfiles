@@ -14,7 +14,6 @@ xterm
 i3-gaps
 xorg-server
 xorg-xinit
-polybar
 i3lock-fancy-git
 compton
 rofi
@@ -36,3 +35,5 @@ autorandr
 feh
 dunst
 starship
+keyutils
+lemonbar-git

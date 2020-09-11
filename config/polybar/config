@@ -27,7 +27,8 @@ margin-bottom = 0
 enable-ipc = true
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 24
+height = 43
+dpi = 192
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -45,10 +46,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = ypn envypn:size=10;2
-font-1 = Siji:pixelsize=10;2
-font-2 = termsynu:size=8;2
-
+font-0 = San Francisco Display Regular:size=15;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
+font-2 = "MaterialIcons:size=15:antialias=false;1"
+font-3 = "icomoon-extended-ultra:size=15:antialias=false;1"
+font-4 = "Ubuntu Nerd Font:size=15:antialias=false;1"
+font-5 = FontAwesome:size=15;1
 
 modules-left = i3
 ;modules-center = mpd
