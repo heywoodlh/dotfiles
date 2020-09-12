@@ -145,6 +145,8 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+l exec i3lock-fancy
 
+exec --no-startup-id xrandr --dpi 220
+
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15 #increase brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15 #decrease brightness
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+ 
@@ -153,9 +155,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 bindsym Print exec xfce4-screenshooter --region --clipboard
 
-exec --no-startup-id compton --backend glx --vsync opengl-sw
-
-exec --no-startup-id autorandr --load default
+exec --no-startup-id compton
 
 exec --no-startup-id redshift-gtk -l 40:111
 exec --no-startup-id nitrogen --restore
@@ -178,3 +178,4 @@ for_window [class="^.*"] border pixel 0
 gaps inner 5
 gaps outer 1
 
+exec --no-startup-id keyctl link @u @s
