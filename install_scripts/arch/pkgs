@@ -15,7 +15,7 @@ i3-gaps
 xorg-server
 xorg-xinit
 i3lock-fancy-git
-compton
+picom
 rofi
 pulseaudio
 gnome-keyring
