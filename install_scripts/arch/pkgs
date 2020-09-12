@@ -25,7 +25,7 @@ emptty
 pass
 network-manager-applet
 blueman
-bitwarden-rofi
+bitwarden-rofi-git
 redshift
 xss-lock
 nitrogen
