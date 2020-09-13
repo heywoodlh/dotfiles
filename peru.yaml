@@ -13,6 +13,7 @@ imports:
   vim-jedi: vim/bundle/jedi
   vim-markdown: vim/bundle/markdown
   vim-nerdtree: vim/bundle/nerdtree
+  vim-nord: vim/bundle/nord
   vim-pathogen: vim/
   vim-pydocstring: vim/bundle/pydocstring
   vim-sensible: vim/bundle/sensible
@@ -59,6 +60,9 @@ git module vim-markdown:
 
 git module vim-nerdtree:
     url: https://github.com/preservim/nerdtree
+
+git module vim-nord:
+    url: https://github.com/arcticicestudio/nord-vim
 
 git module vim-jedi:
     url: https://github.com/davidhalter/jedi-vim
