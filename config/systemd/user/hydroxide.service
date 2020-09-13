@@ -1,0 +1,8 @@
+[Unit]
+Description=Hydroxide
+
+[Service]
+ExecStart=/home/heywoodlh/.local/bin/hydroxide serve
+
+[Install]
+WantedBy=multi-user.target
