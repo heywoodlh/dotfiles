@@ -1,6 +1,6 @@
 function signal-weechat 
   signald
-  if ! docker volume ls | grep -i signal_weechat
+  if ! docker volume ls | grep -iq signal_weechat
     docker volume create signal_weechat
   end
   docker run -it --rm \
