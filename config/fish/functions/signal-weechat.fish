@@ -1,9 +1,11 @@
 function signal-weechat 
   signald
-  docker volume signal-weechat
+  if ! docker volume ls | grep -i signal_weechat
+    docker volume create signal_weechat
+  end
   docker run -it --rm \
     -v ~/.docker/signald/run:/var/run/signald \
     -v ~/.config/signald:/weechat/.config/signald \
-    -v signal-weechat:/weechat/.weechat \
+    -v signal_weechat:/weechat/.weechat \
     heywoodlh/signal-weechat
 end
