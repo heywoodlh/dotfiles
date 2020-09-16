@@ -12,6 +12,6 @@ function signald
       -v ~/.docker/signald/run:/var/run/signald \
       -v ~/.config/signald:/home/gradle/.config/signald \
       --restart=unless-stopped \
-      heywoodlh/signald
+      finn/signald
   end
 end
