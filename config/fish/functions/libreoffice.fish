@@ -2,21 +2,21 @@ function libreoffice
   if ! docker volume ls | grep -iq libreoffice
     docker volume create libreoffice
   end
-  if ! docker network ls | grep -iq nextcloud_libreoffice
-    docker network create nextcloud_libreoffice
-  end
+  
   docker run -d --name=libreoffice --restart=unless-stopped \
+    -p 9980:9980 \
     -v libreoffice:/etc/loolwsd \
-    --network nextcloud_libreoffice \
+    -e DONT_GEN_SSL_CERT=1 \
+    -e extra_params="--o:ssl.enable=false" \
     libreoffice/online:latest
 
   if ! docker volume ls | grep -iq nextcloud
     docker volume create nextcloud
   end
   docker run --name=nextcloud -d --restart=unless-stopped \
-    --network nextcloud_libreoffice \
+    --link libreoffice:libreoffice \
     -v nextcloud:/var/www/html \
-    -e NEXTCLOUD_TRUSTED_DOMAINS="localhost" \
+    -e NEXTCLOUD_TRUSTED_DOMAINS="nextcloud" \
     -e NEXTCLOUD_ADMIN_USER="admin" \
     -e NEXTCLOUD_ADMIN_PASSWORD="admin" \
     -p 9080:80 \
