@@ -31,7 +31,7 @@ function libreoffice
 
   if ! grep -E 'nextcloud|libreoffice' /etc/hosts
     echo 'entries for nextcloud/libreoffice not in /etc/hosts'
-    sudo mv /etc/hosts{,.backup} && sudo awk '/^127.0.0.1/ {$0=$0" nextcloud libreoffice"} 1' /etc/hosts.backup > /etc/hosts
+    sudo mv /etc/hosts{,.backup} && awk '/^127.0.0.1/ {$0=$0" nextcloud libreoffice"} 1' /etc/hosts.backup | sudo tee /etc/hosts
   end
 
 end
