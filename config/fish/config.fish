@@ -26,15 +26,15 @@ if test -d ~/go/bin
   end
 end
 
-if test -d /usr/X11R6/bin
-  if not echo "$PATH" | grep -q '/usr/X11R6/bin'
-    set -gx PATH /usr/X11R6/bin $PATH
-  end
-end
-
 if test -d ~/.local/bin
   if not echo "$PATH" | grep -q '~/.local/bin'
     set -gx PATH ~/.local/bin $PATH
+  end
+end
+
+if test -d ~/.local/bin/scripts
+  if not echo "$PATH" | grep -q '~/.local/bin/scripts'
+    set -gx PATH ~/.local/bin/scripts $PATH
   end
 end
 
@@ -65,8 +65,6 @@ else if test -f "$NIX_LINK/etc/ssl/certs/ca-bundle.crt"
 else if test -f "$NIX_LINK/etc/ca-bundle.crt"
   set -x NIX_SSL_CERT_FILE "$NIX_LINK/etc/ca-bundle.crt"
 end
-
-set EDITOR (which vim)
 
 if uname -a | grep -iq 'Linux'
   if test -e ~/.config/fish/linux_functions
