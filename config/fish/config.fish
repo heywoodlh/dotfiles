@@ -6,14 +6,6 @@ else
     set BW_SESSION ''
 end
 
-if uname -a | grep -q 'Darwin'
-  set -Ux LSCOLORS cxfxcxdxbxcgdggcaghcah
-end
-
-if uname -a | grep -iq 'Linux'
-  set -Ux LS_COLORS 'di=32:ln=35:so=32:pi=37:ex=35:bd=34;46:cd=37;43:su=34;46:sg=30;46:tw=30;45:ow=36;45'
-end
-
 set GOPATH $HOME/go
 
 if test -d ~/.nix-profile/bin
@@ -59,6 +51,7 @@ set -x NIX_IGNORE_SYMLINK_STORE 1
 #  export XDG_DATA_DIRS="$HOME/.nix-profile/share:$HOME/.local/share/:/usr/share:$XDG_DATA_DIRS"
 #end
 
+
 if test -f /etc/ssl/certs/ca-certificates.crt
   set -x NIX_SSL_CERT_FILE "/etc/ssl/certs/ca-certificates.crt"
 
@@ -80,7 +73,11 @@ end
 
 set EDITOR /usr/bin/vim
 
-set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
+if uname -a | grep -iq 'Linux'
+  if test -e ~/.config/fish/linux_functions
+    source ~/.config/fish/linux_functions/*.fish
+  end
+end
 
 builtin history clear
 
