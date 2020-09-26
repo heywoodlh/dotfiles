@@ -38,6 +38,12 @@ if test -d ~/.local/bin/scripts
   end
 end
 
+if test -d /run/current-system/sw/bin
+  if not echo "$PATH" | grep -q '/run/current-system/sw/bin'
+    set -gx PATH /run/current-system/sw/bin $PATH
+  end
+end
+
 source ~/.config/fish/functions/security-functions.fish
 
 set -x NIX_PATH "$HOME/.nix-defexpr/channels"
@@ -71,6 +77,7 @@ if uname -a | grep -iq 'Linux'
     source ~/.config/fish/linux_functions/*.fish
   end
 end
+
 
 builtin history clear
 

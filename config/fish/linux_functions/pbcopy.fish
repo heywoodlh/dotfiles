@@ -1,3 +1,3 @@
 function pbcopy
-  xclip -selection clipboard
+  xclip -selection clipboard -r
 end
