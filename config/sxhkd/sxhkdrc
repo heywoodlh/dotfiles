@@ -1,13 +1,14 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
 # i3 hotkeys
 #
 
-super + space 
-    albert show
 
 # wm independent hotkeys
 #
+
+super + space 
+    albert show
 
 super + shift + s
     screenshot
