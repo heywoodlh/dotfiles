@@ -74,7 +74,9 @@ end
 
 if uname -a | grep -iq 'Linux'
   if test -e ~/.config/fish/linux_functions
-    source ~/.config/fish/linux_functions/*.fish
+    for file in ~/.config/fish/linux_functions/*.fish
+      source $file
+    end
   end
 end
 
