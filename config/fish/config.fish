@@ -73,13 +73,20 @@ else if test -f "$NIX_LINK/etc/ca-bundle.crt"
 end
 
 if uname -a | grep -iq 'Linux'
-  if test -e ~/.config/fish/linux_functions
-    for file in ~/.config/fish/linux_functions/*.fish
+  if test -e ~/.config/fish/linux_config
+    for file in ~/.config/fish/linux_config/*.fish
       source $file
     end
   end
 end
 
+if uname -a | grep -iq 'Darwin'
+  if test -e ~/.config/fish/mac_config
+    for file in ~/.config/fish/mac_config/*.fish
+      source $file
+    end
+  end
+end
 
 builtin history clear
 

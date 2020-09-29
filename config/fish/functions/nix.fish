@@ -5,10 +5,6 @@ set -x NIX_LINK "$HOME/.nix-profile"
 set -x NIX_USER_PROFILE_DIR "/nix/var/nix/profiles/per-user/$USER"
 
 
-if uname -a | grep -iq 'darwin'
-  ~/.nix/shell/mac-link-apps.sh
-end
-
 #-------------------------------------------------------------------
 #  The great nix function
 #-------------------------------------------------------------------
