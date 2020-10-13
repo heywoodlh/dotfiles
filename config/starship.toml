@@ -1,2 +1,3 @@
 [character]
-style_success = "bold white"
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
