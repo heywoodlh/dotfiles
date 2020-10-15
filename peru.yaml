@@ -22,6 +22,8 @@ imports:
   vim-supertab: vim/bundle/supertab
   vim-which-key: vim/bundle/which-key
 
+  choose-password-scripts: .choose-scripts
+
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
 
@@ -88,4 +90,5 @@ git module vim-supertab:
 git module vim-which-key:
     url: https://github.com/liuchengxu/vim-which-key
 
-
+git module choose-password-scripts:
+    url: https://github.com/heywoodlh/choose-password-scripts
