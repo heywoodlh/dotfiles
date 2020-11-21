@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c wire
-Terminal=false
-Name=Wire
-Categories=Network;WebBrowser;Security;
-Icon=/home/heywoodlh/Documents/Icons/wire.png
-GenericName=Message

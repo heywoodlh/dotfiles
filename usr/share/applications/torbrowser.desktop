@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c tor-browser
-Terminal=false
-Name=Tor Browser
-Categories=Network;WebBrowser;Security;
-Icon=/home/heywoodlh/Documents/Icons/tor-browser.png
-Comment=Tor Browser Bundle built by torproject.org
-GenericName=Web Browser

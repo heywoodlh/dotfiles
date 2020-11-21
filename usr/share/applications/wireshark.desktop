@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c wireshark
-Terminal=false
-Name=Wireshark
-Categories=Network;Security;
-Icon=/home/heywoodlh/Documents/Icons/wireshark.png
-GenericName=Web Browser

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/heywoodlh/.nix-profile/bin/fish -c gnuradio
-Terminal=false
-Name=GNU Radio
-Categories=Network;Radio;Frequency;
-Icon=/home/heywoodlh/Documents/Icons/gnuradio.png
-GenericName=SDR
