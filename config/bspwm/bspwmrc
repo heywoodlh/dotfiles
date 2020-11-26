@@ -12,5 +12,11 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 ## Custom stuff:
-picom &
+picom --dbus &
+dunst &
+unclutter &
+redshift &
 sh $HOME/.config/global.conf
+xss-lock -- i3lock-fancy &
+feh --bg-fill ~/Pictures/active-background.png
+xrandr --output eDP-1 --mode "1920x1080" &
