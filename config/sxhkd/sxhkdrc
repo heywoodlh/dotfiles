@@ -51,3 +51,6 @@ control + super + s
 
 control + alt + t
   kitty
+
+control + super + b
+  battpop
