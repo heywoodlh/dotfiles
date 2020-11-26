@@ -7,6 +7,10 @@
 control + super + l
   bspc quit
 
+# lock screen
+control + l
+  i3lock-fancy
+
 # alternate between the tiled and monocle layout
 super + m
   bspc desktop -l next

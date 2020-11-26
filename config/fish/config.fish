@@ -89,5 +89,3 @@ if uname -a | grep -iq 'Darwin'
 end
 
 builtin history clear
-
-starship init fish | source
