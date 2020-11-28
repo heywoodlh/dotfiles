@@ -8,7 +8,7 @@ control + super + l
   bspc quit
 
 # lock screen
-control + l
+super + l
   i3lock-fancy
 
 # alternate between the tiled and monocle layout
@@ -54,3 +54,15 @@ control + alt + t
 
 control + super + b
   battpop
+
+XF86MonBrightnessUp 
+  light -A 5
+
+XF86MonBrightnessDown 
+  light -U 5
+
+XF86AudioRaiseVolume 
+  amixer -q sset Master 3%+
+
+XF86AudioLowerVolume 
+  amixer -q sset Master 3%-

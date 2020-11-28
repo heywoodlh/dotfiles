@@ -39,3 +39,5 @@ netctl
 dialog
 firefox
 signal-desktop
+light-git
+alsa-utils
