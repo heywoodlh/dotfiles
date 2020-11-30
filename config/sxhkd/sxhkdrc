@@ -61,8 +61,8 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown 
   light -U 5
 
-XF86AudioRaiseVolume 
-  amixer -q sset Master 3%+
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume 
-  amixer -q sset Master 3%-
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
