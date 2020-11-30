@@ -18,5 +18,4 @@ unclutter &
 redshift &
 sh $HOME/.config/global.conf
 xrandr --output eDP-1 --mode "1920x1080" &
-feh --bg-fill ~/Pictures/active-background.png &
 keyctl link @u @s
