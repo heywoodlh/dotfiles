@@ -1,0 +1,68 @@
+#!/bin/sh
+#
+# bspwm
+#
+
+# quit bspwm normally
+control + super + l
+  bspc quit
+
+# lock screen
+super + l
+  i3lock-fancy
+
+# alternate between the tiled and monocle layout
+super + m
+  bspc desktop -l next
+
+# focus or send to the given desktop
+super + {1-9,0}
+  bspc desktop --focus \
+  {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+super + shift + {1-9,0}
+  bspc node --to-desktop \
+  {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+# focus the node in the given direction
+alt + {j,k,i,l}
+  bspc node -f {west,south,north,east}
+
+# move the node in the given direction
+super + shift + {j,k,i,l}
+  bspc node -s {west,south,north,east}
+
+# move the node in the given direction
+control + {j,l}
+  bspc desktop --focus {next,prev}
+
+## WM independent hotkeys
+super + space
+  rofi -theme nord -show run -display-run "run: "
+
+alt + Tab
+  rofi -theme nord -show window -display-window "window: "
+
+super + shift + s
+  maim -s -c "0.56,0.63,0.70,0.4" | xclip -selection clipboard -t image/png
+
+control + super + s
+  bwmenu
+
+control + alt + t
+  kitty
+
+control + super + b
+  battpop
+
+XF86MonBrightnessUp 
+  light -A 5
+
+XF86MonBrightnessDown 
+  light -U 5
+
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume 
+  pactl set-sink-volume @DEFAULT_SINK@ -5%

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ -z $battery_file ]]
+then
+	battery_file="/sys/class/power_supply/BAT0/capacity"
+fi
+
+notify-send "$(cat ${battery_file})"
