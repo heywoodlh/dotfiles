@@ -88,4 +88,13 @@ if uname -a | grep -iq 'Darwin'
   end
 end
 
+
+if test -d ~/opt/homebrew/
+  set -gx PATH ~/opt/homebrew/bin $PATH
+  mkdir -p ~/opt/local/bin/
+  set -gx PATH ~/opt/local/bin $PATH
+end
+
+set -g HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
+
 builtin history clear
