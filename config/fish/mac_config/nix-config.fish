@@ -1,3 +1,1 @@
-if uname -a | grep -iq 'darwin'
-  ~/.nix/shell/mac-link-apps.sh
-end
+set -gx PATH /etc/profiles/per-user/heywoodlh/bin $PATH
