@@ -1,5 +1,5 @@
 function battalert
-  set threshold 10
+  set threshold 15
   
   set battery_level (pmset -g batt | grep 'InternalBattery' | awk '{print $3}' | sed 's/;/ /g' | tr -d '%')
   
