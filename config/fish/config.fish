@@ -1,3 +1,4 @@
+
 set fish_greeting ''
 
 if test -f ~/.bw_session
@@ -96,5 +97,6 @@ if test -d ~/opt/homebrew/
 end
 
 set -g HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
+set -g hydro_symbol_prompt "::"
 
 builtin history clear
