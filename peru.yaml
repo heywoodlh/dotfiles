@@ -7,9 +7,7 @@ imports:
   vim-base16: vim/bundle/base16
   vim-colorizer: vim/bundle/colorizer
   vim-fish: vim
-  vim-gitgutter: vim/bundle/gitgutter
   vim-go: vim/bundle/go
-  vim-jedi: vim/bundle/jedi
   vim-nerdtree: vim/bundle/nerdtree
   vim-nord: vim/bundle/nord
   vim-pathogen: vim/
@@ -44,26 +42,14 @@ git module vim-fish:
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
 
-git module vim-gitgutter:
-    url: https://github.com/airblade/vim-gitgutter
-
-git module vim-go:
-    url: https://github.com/fatih/vim-go
-
 git module vim-nerdtree:
     url: https://github.com/preservim/nerdtree
 
 git module vim-nord:
     url: https://github.com/arcticicestudio/nord-vim
 
-git module vim-jedi:
-    url: https://github.com/davidhalter/jedi-vim
-
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-
-git module vim-pydocstring:
-    url: https://github.com/heavenshell/vim-pydocstring
 
 git module vim-sensible:
     url: https://github.com/tpope/vim-sensible
