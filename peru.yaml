@@ -22,7 +22,7 @@ git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
 
 curl module choose-launcher:
-    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/8c82f6b0af5fec4362bf1174de89313d73058ae9/choose-launcher.sh
+    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/4622178473b58c0a898018b362b36c4f587e2800/choose-launcher.sh
     executable: choose-launcher.sh
 
 git module vim-airline:
