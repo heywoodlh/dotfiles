@@ -35,6 +35,15 @@ fi
 
 ln -s $dir/config ~/.config
 
+# Custom command for bin dir
+
+if [[ -d ~/.local/bin ]]
+then
+	mv ~/.local/bin ~/.local/bin.old
+fi
+
+ln -s $dir/bin ~/.local/bin
+
 # Move any existing dotfiles to dotfiles_old directory, and create symlinks
 # from the homedir to any files in the ~/dotfiles
 for file in $files; do

@@ -1,17 +1,17 @@
 imports:
   base16-shell: config/base16-shell
 
+  choose-launcher: bin/
+  
   vim-airline: vim/bundle/airline
   vim-airline-themes: vim/bundle/airline-themes
   vim-auto-pairs: vim/bundle/auto-pairs
   vim-base16: vim/bundle/base16
   vim-colorizer: vim/bundle/colorizer
   vim-fish: vim
-  vim-go: vim/bundle/go
   vim-nerdtree: vim/bundle/nerdtree
   vim-nord: vim/bundle/nord
   vim-pathogen: vim/
-  vim-pydocstring: vim/bundle/pydocstring
   vim-sensible: vim/bundle/sensible
   vim-sneak: vim/bundle/sneak
   vim-sudoedit: vim/bundle/sudoedit
@@ -20,6 +20,10 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
+
+curl module choose-launcher:
+    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/8c82f6b0af5fec4362bf1174de89313d73058ae9/choose-launcher.sh
+    executable: choose-launcher.sh
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
