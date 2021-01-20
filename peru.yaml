@@ -23,7 +23,7 @@ git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
 
 curl module choose-file-manager:
-    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/e1745f9085e65a71ae477578a8b0e7a54f0f70f5/choose-file-manager.sh
+    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/9c71f70a3094072e4527fa2e7ebd0ccfaad133c2/choose-file-manager.sh
     executable: choose-file-manager.sh
 
 curl module choose-launcher:
