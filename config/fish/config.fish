@@ -81,6 +81,12 @@ if uname -a | grep -iq 'Linux'
   end
 end
 
+if test -d ~/opt/homebrew/
+  set -gx PATH ~/opt/homebrew/bin $PATH
+  mkdir -p ~/opt/local/bin/
+  set -gx PATH ~/opt/local/bin $PATH
+end
+
 if uname -a | grep -iq 'Darwin'
   if test -e ~/.config/fish/mac_config
     for file in ~/.config/fish/mac_config/*.fish
@@ -89,14 +95,8 @@ if uname -a | grep -iq 'Darwin'
   end
 end
 
-
-if test -d ~/opt/homebrew/
-  set -gx PATH ~/opt/homebrew/bin $PATH
-  mkdir -p ~/opt/local/bin/
-  set -gx PATH ~/opt/local/bin $PATH
-end
-
 set -g HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
 set -g hydro_symbol_prompt "::"
+set -U __done_min_cmd_duration 20
 
 builtin history clear
