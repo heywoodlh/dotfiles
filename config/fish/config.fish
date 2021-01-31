@@ -1,4 +1,3 @@
-
 set fish_greeting ''
 
 if test -f ~/.bw_session
@@ -99,5 +98,7 @@ end
 set -g HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
 set -g hydro_symbol_prompt "::"
 set -U __done_min_cmd_duration 20
+
+set -g EDITOR (which vim)
 
 builtin history clear
