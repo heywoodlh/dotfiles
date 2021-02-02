@@ -3,6 +3,7 @@ imports:
 
   choose-file-manager: bin/
   choose-launcher: bin/
+  choose-buku: bin/
   
   vim-airline: vim/bundle/airline
   vim-airline-themes: vim/bundle/airline-themes
@@ -27,8 +28,12 @@ curl module choose-file-manager:
     executable: choose-file-manager.sh
 
 curl module choose-launcher:
-    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/4622178473b58c0a898018b362b36c4f587e2800/choose-launcher.sh
+    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/e95fb35c7ff6c3e02a5719d5baec722b8722a947/choose-launcher.sh
     executable: choose-launcher.sh
+
+curl module choose-buku:
+    url: https://gist.githubusercontent.com/heywoodlh/2f3f3bd83bb32719cb89ec3ee137fb5b/raw/4d181fe7b7da227399d1932494725a06b41f28ae/choose-buku.sh
+    executable: choose-buku.sh
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
