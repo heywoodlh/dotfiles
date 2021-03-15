@@ -269,6 +269,10 @@ function padbuster
   docker run -it --rm heywoodlh/kali-linux padbuster $argv
 end
 
+function pret
+  docker run -it --rm slothdotexe/pret-docker /home/user/PRET/pret.py $argv
+end
+
 function reaver
   docker run -it --rm --net host --privileged -w /data -v (pwd):/data -v /tmp:/tmp heywoodlh/kali-linux reaver $argv
 end
