@@ -96,8 +96,14 @@ if test -d ~/opt/homebrew/
 end
 
 set -g HOMEBREW_CASK_OPTS "--appdir=$HOME/Applications"
-set -g hydro_symbol_prompt "::"
 set -U __done_min_cmd_duration 20
+
+if env | grep -q 'SSH_TTY'
+  set -g hydro_symbol_prompt (hostname)::
+else
+  set -g hydro_symbol_prompt '::'
+end
+  
 
 export EDITOR=(which vim)
 
